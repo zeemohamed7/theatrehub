@@ -7,9 +7,6 @@ const session = require('express-session')
 //Importing Routes
 
 const indexRoute = require('./routes/index')
-const Route = require('./routes/')
-const Route = require('./routes/')
-const Route = require('./routes/')
 
 
 
@@ -19,7 +16,7 @@ const app = express()
 
 // channel
 
-const port = 3000
+const port = 4000
 app.use(expressLyouts)
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
@@ -28,14 +25,14 @@ app.use(express.urlencoded({
     extended: true
 }))
 
-app.use(session({
-    secret:'This is a secret !',
-    saveUninitialized: true,
-    resave: false,
-    cookie: {maxAge: 86400000}
-}))
-app.use(passport.initialize())
-app.use(passport.session())
+// app.use(session({
+//     secret:'This is a secret !',
+//     saveUninitialized: true,
+//     resave: false,
+//     cookie: {maxAge: 86400000}
+// }))
+// app.use(passport.initialize())
+// app.use(passport.session())
 
 app.use(function(req, res, next){
     res.locals.currentUser = req.user
@@ -45,10 +42,6 @@ app.use(function(req, res, next){
 // Mount the Routes
 
 app.use('/', indexRoute)
-app.use('/', Route)
-app.use('/', Route)
-app.use('/', Route)
-
 
 app.listen(port, () => {
     console.log(`The Anime section is on port now ${port}`)
