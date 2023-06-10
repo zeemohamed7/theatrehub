@@ -16,7 +16,7 @@ const app = express()
 
 // channel
 
-const port = 4000
+const port = 3000
 app.use(expressLyouts)
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
@@ -44,7 +44,7 @@ app.use(function(req, res, next){
 app.use('/', indexRoute)
 
 app.listen(port, () => {
-    console.log(`The Anime section is on port now ${port}`)
+    console.log(`The Cinema section is on port now ${port}`)
 })
 
 mongoose.connect('mongodb://127.0.0.1:27017/Cinema',
