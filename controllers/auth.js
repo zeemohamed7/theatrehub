@@ -8,15 +8,30 @@ exports.auth_signup_get = (req, res) => {
 }
 
 // POST sign up information to database
-exports.auth_signup_post = async (req, res) => {
+exports.auth_signup_post = async (req, res, error) => {
     try{
-        const user = new User(req.body)
-        const hash = bcrypt.hashSync(req.body.password, 10) 
-        user.password = hash
+        const password = req.body.password
+        const confirm_password = req.body.confirm_password
+    console.log(password)
+    console.log(confirm_password)
 
-        await user.save()
+  if(password != confirm_password) {
+    console.log("Passwords Don't Match")
+    res.redirect('/auth/signup')
+  } else {
+  
+    const user = new User(req.body)
+    const pass = req.body.password.toString();
+    const hash = bcrypt.hashSync(pass, 10) 
+    user.password = hash
 
-        res.redirect('/')
+    await user.save()
+
+    res.redirect('/');
+  
+}
+
+
     } catch(error){
         console.log(error.message)
     }
