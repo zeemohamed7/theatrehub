@@ -6,7 +6,7 @@ const session = require('express-session')
 
 //Importing Routes
 
-const indexRoute = require('./routes/index')
+const indexRoute = require('./routes/index') //HOME route
 const authRoute = require('./routes/auth')
 
 
