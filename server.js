@@ -47,7 +47,10 @@ app.use('/', indexRoute)
 app.use('/', authRoute)
 
 app.listen(port, () => {
-    console.log(`Cinema is on port now ${port}`)
+
+
+    console.log(`The Cinema section is on port now ${port}`)
+
 })
 
 mongoose.connect('mongodb+srv://deadmelissajames:AZ3K6OEWsqD3hJ1g@sei4cluster.uwzeppu.mongodb.net/Cinema',
