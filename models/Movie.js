@@ -3,13 +3,13 @@ const mongoose=require('mongoose');
 
  const movieSchema=mongoose.Schema({
 
-  m_name: {
+  title: {
     type: String,
     required: true, 
 },
-  m_description:{ type:String   },
-  m_genre:{type:String ,required:true},
-  m_duration:{type:String}
+  description:{ type:String   },
+  genre:{type:String ,required:true},
+  duration:{type:String}
  })
 
 const Movie = mongoose.model('movie',movieSchema)
