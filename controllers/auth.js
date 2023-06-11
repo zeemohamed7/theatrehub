@@ -1,3 +1,4 @@
+
 const bcrypt = require('bcrypt') // import bcrypt packages 
 const passport = require('../lib/passportConfig') // import passport
 const User = require('../models/User')
@@ -57,3 +58,4 @@ exports.auth_logout_get  = (req, res) => {
         res.redirect('/auth/signin')
     }) 
 }
+
