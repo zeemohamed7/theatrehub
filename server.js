@@ -3,10 +3,13 @@ const express = require('express')
 const mongoose = require('mongoose')
 const expressLyouts = require('express-ejs-layouts')
 const session = require('express-session')
+const passport = require('./lib/passportConfig')
 
 //Importing Routes
 
 const indexRoute = require('./routes/index')
+const authRoute = require('./routes/auth')
+const userRoute = require('./routes/user')
 
 
 
@@ -21,18 +24,19 @@ app.use(expressLyouts)
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
+
 app.use(express.urlencoded({
     extended: true
 }))
 
-// app.use(session({
-//     secret:'This is a secret !',
-//     saveUninitialized: true,
-//     resave: false,
-//     cookie: {maxAge: 86400000}
-// }))
-// app.use(passport.initialize())
-// app.use(passport.session())
+app.use(session({
+    secret:'This is a secret !',
+    saveUninitialized: true,
+    resave: false,
+    cookie: {maxAge: 86400000}
+}))
+app.use(passport.initialize())
+app.use(passport.session())
 
 app.use(function(req, res, next){
     res.locals.currentUser = req.user
@@ -42,12 +46,18 @@ app.use(function(req, res, next){
 // Mount the Routes
 
 app.use('/', indexRoute)
+app.use('/', authRoute)
+app.use('/', userRoute)
+
 
 app.listen(port, () => {
+
+
     console.log(`The Cinema section is on port now ${port}`)
+
 })
 
-mongoose.connect('mongodb://127.0.0.1:27017/Cinema',
+mongoose.connect('mongodb+srv://deadmelissajames:AZ3K6OEWsqD3hJ1g@sei4cluster.uwzeppu.mongodb.net/Cinema',
 {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -57,6 +67,5 @@ mongoose.connect('mongodb://127.0.0.1:27017/Cinema',
 }).catch((err) => {
     console.log('An error occured', err)
 })
-
 
 

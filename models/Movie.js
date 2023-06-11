@@ -1,7 +1,7 @@
 
-const mongoose=require('mongoose');
+const mongoose = require('mongoose');
 
- const movieSchema=mongoose.schema({
+ const movieSchema = mongoose.schema({
 
   m_id:{type:String, unique: true},
   m_name: {
