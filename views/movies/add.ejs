@@ -1,43 +1,56 @@
+<!-- this pg to add a movie using a form  -->
 
 
-<form method="POST" action="/book/add">
+<!-- 
+m_id:{type:String, unique: true},
+m_name: 
+m_description:
+m_genre:
+m_duration:
+m_Date:
+m_Time:
+ -->
+
+
+<form method="POST" action="/book/add" enctype="multipart/form-data"  >
 <div>
 
 <label> movie name </label>
-<input type="text" name="name"> 
+<input type="text" name="name"  > 
 </div>
 
+<div>
+<label > movie picture </label>
+<input type="image" name="i">
+</div>
+
+<div>
+    <label> movie description</label>
+    <input type="text" name="description"  >
+    </div>
+
+    
+    
 <div>
 <label >Genere</label>
-<input type="text" name="genre">
+<input type="text" name="genre"  >
 </div>
 
 <div>
-<label> movie description</label>
-<input type="text" name="description">
-</div>
+    <label >duration </label>
+    <input type="number" name="duration"  >
+    </div>
 
 <div>
 <label>start date </label>
-<input type="date" name="date" >
+<input type="date" name="date" value="<%=movie.date%>"  >
 </div>
 
 
 <div>
 <label>start time </label>
-<input type="time" name="time"  >
+<input type="time" name="time" value="<%=movie.time%>" >
 </div>
-
-
-<div>
-    <label>Format 2D/3D</label>
-    <select class="Format" name="Formats">
-        <option value="3D">2D</option>
-        <option value="2D">3D</option>
-        
-      </select>
-</div>
-
 
 
 </form>
