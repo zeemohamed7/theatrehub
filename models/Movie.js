@@ -1,14 +1,16 @@
 
 const mongoose=require('mongoose');
 
- const movieSchema=mongoose.schema({
+const Schema=mongoose.Schema
 
+
+ const movieSchema=new Schema({
   m_id:{type:String, unique: true},
   m_name: {
     type: String,
     required: true, 
 },
-  m_description:{ type:String   },
+  m_description:{ type:String },
   m_genre:{type:String ,required:true},
   m_duration:{type:String}
  })
