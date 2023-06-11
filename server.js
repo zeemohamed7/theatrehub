@@ -49,7 +49,14 @@ app.use('/', authRoute)
 app.use('/', moviesRoute)
 
 app.listen(port, () => {
+<<<<<<< HEAD
     console.log(`Cinema is on port now ${port}`)
+=======
+
+
+    console.log(`The Cinema section is on port now ${port}`)
+
+>>>>>>> 4a7c6f05bf1f1fe9033ac5da11117925efe7691c
 })
 
 mongoose.connect('mongodb+srv://deadmelissajames:AZ3K6OEWsqD3hJ1g@sei4cluster.uwzeppu.mongodb.net/Cinema',
