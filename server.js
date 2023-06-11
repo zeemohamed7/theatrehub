@@ -7,6 +7,7 @@ const session = require('express-session')
 //Importing Routes
 
 const indexRoute = require('./routes/index')
+const authRoute = require('./routes/auth')
 
 
 
@@ -20,6 +21,7 @@ const port = 3000
 app.use(expressLyouts)
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
+
 
 app.use(express.urlencoded({
     extended: true
@@ -42,12 +44,16 @@ app.use(function(req, res, next){
 // Mount the Routes
 
 app.use('/', indexRoute)
+app.use('/', authRoute)
 
 app.listen(port, () => {
+
+
     console.log(`The Cinema section is on port now ${port}`)
+
 })
 
-mongoose.connect('mongodb://127.0.0.1:27017/Cinema',
+mongoose.connect('mongodb+srv://deadmelissajames:AZ3K6OEWsqD3hJ1g@sei4cluster.uwzeppu.mongodb.net/Cinema',
 {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -57,6 +63,5 @@ mongoose.connect('mongodb://127.0.0.1:27017/Cinema',
 }).catch((err) => {
     console.log('An error occured', err)
 })
-
 
 
