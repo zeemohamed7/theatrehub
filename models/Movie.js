@@ -5,14 +5,16 @@ const Schema=mongoose.Schema
 
 
  const movieSchema=new Schema({
-  m_id:{type:String, unique: true},
-  m_name: {
+  name: {
     type: String,
     required: true, 
 },
-  m_description:{ type:String },
-  m_genre:{type:String ,required:true},
-  m_duration:{type:String}
+  picture:{type:String,required:true},
+  description:{ type:String ,required: true, },
+  genre:{type:String ,required:true},
+  duration:{type:Number ,required: true },
+  Date:{type:Date ,required: true},
+  Time:{type:Date , required: true }
  })
 
 const Movie = mongoose.model('movie',movieSchema)
