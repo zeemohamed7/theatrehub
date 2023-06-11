@@ -8,7 +8,7 @@ const session = require('express-session')
 
 const indexRoute = require('./routes/index') //HOME route
 const authRoute = require('./routes/auth')
-
+const bookingRoute = require('./routes/booking')
 
 
 // initialize the App
@@ -45,6 +45,7 @@ app.use(function(req, res, next){
 
 app.use('/', indexRoute)
 app.use('/', authRoute)
+app.use('/', bookingRoute)
 
 app.listen(port, () => {
 
