@@ -9,7 +9,7 @@
     seats: Array
      -->
 
-<form method="post" action="/views/movies/Booking">
+<form method="post" action="/views/booking/Booking">
     <div>
         <label>movie_name</label>
         <select title="myList" fileName="title" class="form-control form-control-user" style="width: 100%; padding: 0.375rem 0.75rem; height: 50px;" tabindex="-1" aria-hidden="true" value="<%= movie.title%>">
@@ -21,6 +21,13 @@
             <option value="The Three Idiots">The Three Idiots</option>
             <option value="Whisper of The Heart">Whisper of The Heart</option>
             <option value="Home Alone">Home Alone</option>
+            <option value="wuthering heights">wuthering heights</option>
+            <option value="The OutLaws">The OutLaws</option>
+            <option value="PK">PK</option>
+            <option value="The Shawshank Redemption">The Shawshank Redemption</option>
+            <option value="Interstellar">Interstellar</option>
+            <option value="Spirited Away">Spirited Away</option>
+
 
                 </select>
         
@@ -116,7 +123,7 @@
          
          </div>
 
-    <button id="save" onclick="reserve.save()">Reserve Seats</button> -->
+    <button id="save" onclick="reserve.save()">Reserve Seats</button> 
 
 
     <input type="hidden" name="id" value="<%=movie._id%>">
