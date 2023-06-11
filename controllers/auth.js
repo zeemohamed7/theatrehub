@@ -20,7 +20,6 @@ exports.auth_signup_post = async (req, res, error) => {
     console.log("Passwords Don't Match")
     res.redirect('/auth/signup')
   } else {
-  
     const user = new User(req.body)
     const pass = req.body.password.toString();
     const hash = bcrypt.hashSync(pass, 10) 
@@ -48,6 +47,11 @@ exports.auth_signin_post = passport.authenticate('local', {
     successRedirect: '/',
     failureRedirect: '/auth/signin'
 }) 
+
+// // forgot password
+// exports.user_forgotpassword_post = async (req, res) => {
+//     res.render('user/forgotpassword')
+// }
 
 // Log out user (Invalidates session)
 exports.auth_logout_get  = (req, res) => {
