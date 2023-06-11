@@ -8,6 +8,7 @@ const session = require('express-session')
 
 const indexRoute = require('./routes/index')
 const authRoute = require('./routes/auth')
+const moviesRoute = require('./routes/movies')
 
 
 
@@ -45,6 +46,7 @@ app.use(function(req, res, next){
 
 app.use('/', indexRoute)
 app.use('/', authRoute)
+app.use('/', moviesRoute)
 
 app.listen(port, () => {
     console.log(`Cinema is on port now ${port}`)

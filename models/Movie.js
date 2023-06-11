@@ -1,9 +1,8 @@
 
 const mongoose=require('mongoose');
 
- const movieSchema=mongoose.schema({
+ const movieSchema=mongoose.Schema({
 
-  m_id:{type:String, unique: true},
   m_name: {
     type: String,
     required: true, 

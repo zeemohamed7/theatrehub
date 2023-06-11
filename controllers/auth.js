@@ -57,3 +57,4 @@ exports.auth_logout_get  = (req, res) => {
         res.redirect('/auth/signin')
     }) 
 }
+
