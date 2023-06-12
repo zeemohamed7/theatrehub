@@ -7,7 +7,7 @@ const passport = require('./lib/passportConfig')
 
 //Importing Routes
 
-const indexRoute = require('./routes/index')
+const indexRoute = require('./routes/index') //HOME route
 const authRoute = require('./routes/auth')
 const bookingRoute = require('./routes/booking')
 const userRoute = require('./routes/user')
