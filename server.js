@@ -10,7 +10,7 @@ const passport = require('./lib/passportConfig')
 const indexRoute = require('./routes/index') //HOME route
 const authRoute = require('./routes/auth')
 const moviesRoute = require('./routes/movies')
-const bookingRoute = require('./routes/booking')
+const bookingRoute = require('./null/booking')
 const userRoute = require('./routes/user')
 
 
