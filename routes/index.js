@@ -6,5 +6,23 @@ const indexController=require('../controllers/index')
 
 router.get('/',indexController.index_get)
 
-module.exports=router
+
+// router.get('/',(err,res)=>{
+// res.send('helooo')
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+module.exports=router;
 

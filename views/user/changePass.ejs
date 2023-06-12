@@ -1,14 +1,14 @@
 <h1>Change Your Password</h1>
 
-<form action="" method="POST">
+<form action="/user/changepassword" method="POST">
     <div>
         <label>New Password</label>
-        <input type="text">
+        <input type="password" name="newPassword" required>
     </div>
 
     <div>
         <label>Confirm Password</label>
-        <input type="text">
+        <input type="password" name="confirmPassword" reqiured>
     </div>
 
     <button type="submit">Submit</button>
