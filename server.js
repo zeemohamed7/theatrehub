@@ -9,7 +9,8 @@ const passport = require('./lib/passportConfig')
 
 const indexRoute = require('./routes/index') //HOME route
 const authRoute = require('./routes/auth')
-const bookingRoute = require('./routes/booking')
+const moviesRoute = require('./routes/movies')
+// const bookingRoute = require('./null/booking')
 const userRoute = require('./routes/user')
 
 
@@ -48,15 +49,13 @@ app.use(function(req, res, next){
 
 app.use('/', indexRoute)
 app.use('/', authRoute)
-app.use('/', bookingRoute)
+app.use('/', moviesRoute)
+// app.use('/', bookingRoute)
 app.use('/', userRoute)
 
 
 app.listen(port, () => {
-
-
-    console.log(`The Cinema section is on port now ${port}`)
-
+    console.log(`Cinema is on port now ${port}`)
 })
 
 mongoose.set('strictQuery', false)
