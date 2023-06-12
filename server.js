@@ -3,6 +3,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const expressLyouts = require('express-ejs-layouts')
 const session = require('express-session')
+const passport = require('./lib/passportConfig')
 
 //Importing Routes
 
@@ -10,6 +11,9 @@ const indexRoute = require('./routes/index') //HOME route
 const authRoute = require('./routes/auth')
 const bookingRoute = require('./routes/booking')
 const movieRoute=require('./routes/movie')
+const userRoute = require('./routes/user')
+
+
 
 // initialize the App
 
@@ -27,14 +31,14 @@ app.use(express.urlencoded({
     extended: true
 }))
 
-// app.use(session({
-//     secret:'This is a secret !',
-//     saveUninitialized: true,
-//     resave: false,
-//     cookie: {maxAge: 86400000}
-// }))
-// app.use(passport.initialize())
-// app.use(passport.session())
+app.use(session({
+    secret:'This is a secret !',
+    saveUninitialized: true,
+    resave: false,
+    cookie: {maxAge: 86400000}
+}))
+app.use(passport.initialize())
+app.use(passport.session())
 
 app.use(function(req, res, next){
     res.locals.currentUser = req.user
@@ -47,6 +51,8 @@ app.use('/', indexRoute)
 app.use('/', authRoute)
 app.use('/', bookingRoute)
 app.use('/',movieRoute)
+app.use('/', userRoute)
+
 
 app.listen(port, () => {
 
