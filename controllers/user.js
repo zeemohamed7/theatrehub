@@ -27,17 +27,20 @@ exports.user_forgotpassword_post = async (req, res) => {
 
 exports.user_changepassword_post = async (req, res) => {
     try {
-        const newPassword = req.body.newPassword
-        const confirmPassword = req.body.confirmPassword
+        const user = await User.find({emailAddress: req.body.emailAddress})
 
-        if(newPassword === confirmPassword) {
-            const pass = req.body.newPassword.toString();
+        const password = req.body.password
+        const confirm_password = req.body.confirm_password
+
+        if(password === confirm_password) {
+            const pass = req.body.password.toString();
             const hash = bcrypt.hashSync(pass, 10)
 
             await User.findOneAndUpdate({emailAddress: req.body.emailAddress, password: hash})
             res.redirect('/auth/signin')
         } else {
-            res.redirect('/');
+            res.redirect('/user/changepassword', {user}); 
+            console.log('Your new passwords dont match')
         }
         
     }
