@@ -1,0 +1,48 @@
+<h3>movie Index</h3>
+
+
+
+
+
+
+
+
+<table>
+    <tr>
+        <th>name</th>
+        <th>Author</th>
+        <th>Genre</th>
+        <th>Fiction?</th>
+        <th>Pages</th>
+    </tr>
+
+
+    <% books.forEach(function(book){ %>
+        <!-- /book/detail?id=647898f51c2b7407d29f6c32 -->
+        <tr>
+            <td>
+                <a href="/book/detail?id=<%= book._id %>">
+                    <%= book.title %>
+                </a>
+                
+            </td>
+            
+            <td>
+                <% book.author.forEach(function(obj, i){%>
+                    <%= i + 1 %>:<%= obj.name %>
+                <% }) %>
+            </td>
+            
+            <td><%= book.genre %> </td>
+            <td><%= book.isFiction %> </td>
+            <td><%= book.numberOfPages %> </td>
+            <td>
+                <form method="POST" action="/book/delete?id=<%=book._id%>">
+                    <button type="submit">DELETE</button>
+                </form>
+                <a href="/book/edit?id=<%=book._id%>">UPDATE</a>
+
+            </td>
+        </tr>
+    <% }) %>
+</table>
