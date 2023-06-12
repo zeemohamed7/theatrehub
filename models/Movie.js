@@ -7,14 +7,16 @@ const Schema=mongoose.Schema
  const movieSchema=new Schema({
   title: {
     type: String,
-    required: true, 
+    required: true
 },
- picture:{
+ img:{
     type:String,
-    required:true
+    // required:true
  },
   description:{ type:String },
-  genre:{type:String ,required:true},
+  genre:{
+    type:String,
+    required:true},
   duration:{type:Number},
   date: {type:Date},
   time:{type: String}

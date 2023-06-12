@@ -20,7 +20,7 @@ title: {
 <table>
     <tr>
         <th>title</th>
-        <th>picture</th>
+        <!-- <th>picture</th> -->
         <th>discription</th>
         <th>Genre</th>
         <th>duration</th>
@@ -29,4 +29,41 @@ title: {
     </tr>
 
 
+    <% movies.forEach(function(movie){  %>
+    <tr>
+
+  <td>
+<%=movie.title%>
+  </td>
+
+  <td>
+    <%=movie.description%>
+      </td>
+
+      <td>
+        <%=movie.genre%>
+      </td>
+
+      <td>
+        <%=movie.duration%>
+          </td>
+
+    <td>
+        <%=movie.date%>
+          </td>
+
+          <td>
+            <%=movie.time%>
+              </td>
+
+              
+        <td>
+            <form method="POST" action="/movie/delete?id=<%=movie._id%>">
+            <button type="submit">DELETE</button>
+                </form>
+        </td>
+    <td><a href="/movie/edit?id=<%=movie._id%>">UPDATE</a></td>
+
+    </tr>
+   <% })  %>
 </table>
