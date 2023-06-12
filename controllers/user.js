@@ -3,26 +3,26 @@ const passport = require('../lib/passportConfig') // import passport
 
 const User = require('../models/User')
 
-// exports.user_forgotpassword_get = async (req, res) => {
-//     res.render('user/forgotpassword')
+exports.user_forgotpassword_get = async (req, res) => {
+    res.render('user/forgotpassword')
     
-// }
+}
 
-// exports.user_forgotpassword_post = async (req, res) => {
-//     try {
-//         const user = await User.find({emailAddress: req.body.emailAddress})
-//         if (user) {
-//             res.render('user/changepassword', {user})
-//         } else if (!user) {
-//             res.send('User Not Found')
-//         }
-//         console.log(user)
-//     }
-//     catch (err) {
-//         console.log(err)
-//         res.send('Error Posting')
-//     }
-// }
+exports.user_forgotpassword_post = async (req, res) => {
+    try {
+        const user = await User.find({emailAddress: req.body.emailAddress})
+        if (user) {
+            res.render('user/changepassword', {user})
+        } else if (!user) {
+            res.send('User Not Found')
+        }
+        console.log(user)
+    }
+    catch (err) {
+        console.log(err)
+        res.send('Error Posting')
+    }
+}
 
 exports.user_changepassword_post = async (req, res) => {
     try {

@@ -46,12 +46,18 @@ src="https://www.youtube.com/embed?v=mP0VHJYFOAU">
             <div class="card">
               <div class="card_image"><img src="https://picsum.photos/500/300"></div>
               <div class="card_content">
-                <h2 class="card_title">Card Grid Layout</h2>
+      <% movies.forEach(function(movie){ %>
+                
+                <h2 class="card_title">                 
+                   <%= movie.title %>
+                </h2>
                 <p class="card_text"></p>
-                <button class="bookbtn btn card_btn">Book</button>
+                <a href="/movies/detail?id=<%=movie._id %>"><button class="bookbtn btn card_btn">Book</button></a>
               </div>
             </div>
           </li>
+          <%}) %>
+
           <li class="cards_item">
             <div class="card">
               <div class="card_image"><img src="https://picsum.photos/500/300"></div>

@@ -42,7 +42,7 @@ trailertest.hide()
 // Check validity and show error on keyup 
 
 const password = $("input[name=password]")
-const confirm_password = $("#confirm_password")
+const confirm_password = $("input[name=confirm_password]")
 const message = $('#message')
 const input = $('input')
 const signupbtn = $('#signup')
@@ -50,13 +50,14 @@ const signupbtn = $('#signup')
 
 $(document).ready(function () {
   input.keyup(() => {
-    console.log(password)
+    
+    console.log(password.val())
+    console.log(confirm_password.val())
 
-    if(password != confirm_password) {
+    if(password.val() != confirm_password.val()) {
      message.css("color", "red")
      message.text("Passwords do not match.")
-    } else if (password === confirm_password){
-      console.log('passwords match')
+    } else if (password.val() === confirm_password.val()){
   
       message.css("color", "green")
   
