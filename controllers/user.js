@@ -5,7 +5,6 @@ const passport = require('../lib/passportConfig') // import passport
 const User = require('../models/User')
 
 
-
 exports.user_changepassword_post = async (req, res) => {
     try {
         const newPassword = req.body.newPassword
