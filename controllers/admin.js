@@ -18,7 +18,7 @@ catch(error){
 
 
 //adds the movie data into database
-exports.book_create_post=(req,res)=>{
+exports.movie_create_post=(req,res)=>{
 console.log(req.body)
 
 const movie=new Movie(req.body) 

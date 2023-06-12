@@ -52,6 +52,8 @@ app.use('/', indexRoute)
 app.use('/', authRoute)
 app.use('/', moviesRoute)
 app.use('/', userRoute)
+app.use('/', adminRoute)
+app.use('/', bookingRoute)
 
 
 app.listen(port, () => {
