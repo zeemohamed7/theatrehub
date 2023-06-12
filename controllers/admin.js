@@ -1,8 +1,6 @@
 //this page to do all basic crud operation for a movie 
 
 
-const response=require('express')
-
 const Movie=require('../models/Movie') //export movie model 
 
 //display all movies in the data base

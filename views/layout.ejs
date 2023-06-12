@@ -46,22 +46,20 @@
         <li class="nav-item">
           <a class="nav-link active white" aria-current="page" href="/"><i class="fas fa-home"></i> Home</a>
         </li>
-        <% if (currentUser) {%>
+      
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="fas fa-film"></i> Movies</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/user/details"><i class="fa fa-fw fa-user"></i>&nbsp;<%= currentUser.firstName %></a>
+            <a class="nav-link" href="/user/details"><i class="fa fa-fw fa-user"></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/auth/logout"> Log Out</a>
           </li>
           <br>
-        <% } else {%>
           <li class="nav-item">
             <a class="nav-link" href="/auth/signin"><i class="fa fa-fw fa-user"></i> Login</a>
           </li>
-        <% } %>
         <li class="nav-item">
           <a class="nav-link" href="#"><i class="fas fa-info"></i> About</a>
         </li>

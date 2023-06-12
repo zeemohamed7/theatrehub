@@ -10,7 +10,6 @@ const passport = require('./lib/passportConfig')
 const indexRoute = require('./routes/index') //HOME route
 const authRoute = require('./routes/auth')
 const moviesRoute = require('./routes/movies')
-const bookingRoute = require('./null/booking')
 const userRoute = require('./routes/user')
 
 
@@ -50,12 +49,11 @@ app.use(function(req, res, next){
 app.use('/', indexRoute)
 app.use('/', authRoute)
 app.use('/', moviesRoute)
-app.use('/', bookingRoute)
 app.use('/', userRoute)
 
 
 app.listen(port, () => {
-    console.log(`Cinema is on port now ${port}`)
+    console.log(`Cinema is on port${port}`)
 })
 
 mongoose.connect('mongodb+srv://deadmelissajames:AZ3K6OEWsqD3hJ1g@sei4cluster.uwzeppu.mongodb.net/Cinema',
