@@ -1,3 +1,4 @@
+//User details and change password
 const bcrypt = require('bcrypt') // import bcrypt packages 
 const passport = require('../lib/passportConfig') // import passport
 
@@ -47,7 +48,26 @@ exports.user_changepassword_post = async (req, res) => {
     }
 }
 
-exports.user_details_get = async (req, res) => {
-    res.render('user/details')
-    
+exports.user_profile_get = async (req, res) => {
+        try {
+
+                console.log(req.query.isEditing)
+
+            // if true console.log(req.query.isEditing)
+            // do nothing
+
+            // else const isEditing = false
+
+
+            console.log(req.query.id)
+
+            const user = await User.findById(req.query.id)
+            console.log(user)
+
+            res.render('user/profile', {user})
+        }
+        catch (err) {
+            console.log('errorrr')
+        }
 }
+

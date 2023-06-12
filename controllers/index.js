@@ -1,5 +1,9 @@
 
+
 const Movie = require('../models/Movie')
+//Display homepage
+
+
 
 
 exports.index_get = async(req, res) => {

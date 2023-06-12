@@ -1,4 +1,5 @@
 
+// Display movie detail page for user
 const Movie = require('../models/Movie')
 
 
