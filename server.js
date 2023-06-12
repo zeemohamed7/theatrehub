@@ -59,10 +59,12 @@ app.listen(port, () => {
 
 })
 
+mongoose.set('strictQuery', false)
+
 mongoose.connect('mongodb+srv://deadmelissajames:AZ3K6OEWsqD3hJ1g@sei4cluster.uwzeppu.mongodb.net/Cinema',
 {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
 },
 ).then(() => {
     console.log('Mongoose Is Connected to MongoDB')

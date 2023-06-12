@@ -9,7 +9,7 @@ const userController = require('../controllers/user')
 router.get('/user/forgotpassword', userController.user_forgotpassword_get)
 router.post('/user/forgotpassword', userController.user_forgotpassword_post)
 router.post('/user/changepassword', userController.user_changepassword_post)
-router.get('/user/details', userController.user_details_get)
+router.get('/user/profile', userController.user_profile_get)
 
 
 module.exports = router
