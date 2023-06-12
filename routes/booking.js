@@ -1,9 +1,9 @@
-const express = require('express')
-const router = express.Router()
+// const express = require('express')
+// const router = express.Router()
 
-const bookingCtrl = require('../controllers/booking')
+// const bookingCtrl = require('../controllers/booking')
 
-// Routes
-router.get('/booking', bookingCtrl.booking_get)
+// // Routes
+// router.get('/booking', bookingCtrl.booking_get)
 
-module.exports = router
+// module.exports = router
