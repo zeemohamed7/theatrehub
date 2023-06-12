@@ -1,20 +1,18 @@
-<h1>User Information</h1>
 
-<form method="POST" action="/views/layout.ejs">
-    <div>
-        <label>firstName</label>
-        <input type="text" name="firstName" value="<%= first.Name %>">
-    </div>
 
-    <div>
-        <label>lastName</label>
-        <input type="text" name="lastName" value="<%= last.Name %>">
-    </div>
+<div>
+        <form  action="/user/profile">
 
-    <div>
-        <label>emailAdress</label>
-        <input type="text" name="email" value="<%= email.Adress %>">
-    </div>
-
-    <button type="submit">Changing Password</button>
+    <label> First Name </label>
+    <h2 value="<%= user.firstName %>"><%= user.firstName %> </h2>
+    <label> last Name </label>
+    <h2 value="<%= user.lastName %>"> <%= user.lastName %></h2>
 </form>
+        </div>
+    
+    
+    
+    
+        <button type="submit">Changing Password</button>
+        <button>edit</button>
+        <a href="/user/profile?isEditing=true&id=<%= user._id %>">Edit</a>
