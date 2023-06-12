@@ -7,9 +7,12 @@ const passport = require('./lib/passportConfig')
 
 //Importing Routes
 
-const indexRoute = require('./routes/index')
+const indexRoute = require('./routes/index') //HOME route
 const authRoute = require('./routes/auth')
-const bookingRoute = require('./routes/booking')
+const moviesRoute = require('./routes/movies')
+const bookingRoute = require('./null/booking')
+const userRoute = require('./routes/user')
+
 
 
 // initialize the App
@@ -46,13 +49,13 @@ app.use(function(req, res, next){
 
 app.use('/', indexRoute)
 app.use('/', authRoute)
+app.use('/', moviesRoute)
 app.use('/', bookingRoute)
+app.use('/', userRoute)
+
 
 app.listen(port, () => {
-
-
-    console.log(`The Cinema section is on port now ${port}`)
-
+    console.log(`Cinema is on port now ${port}`)
 })
 
 mongoose.connect('mongodb+srv://deadmelissajames:AZ3K6OEWsqD3hJ1g@sei4cluster.uwzeppu.mongodb.net/Cinema',
