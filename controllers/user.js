@@ -48,6 +48,7 @@ exports.user_changepassword_post = async (req, res) => {
 }
 
 exports.user_details_get = async (req, res) => {
-    res.render('user/details')
+    const user = await User.find()
+    res.render('user/details', {user})
     
 }

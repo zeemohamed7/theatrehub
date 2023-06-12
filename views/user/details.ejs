@@ -1,17 +1,14 @@
+
     <div>
+       <% user.forEach(function(user){ %>
         <label>firstName</label>
-        <p> value="<%= first.Name %>"</p>
-    </div>
-
-    <div>
+        <h4> <%= user.firstName %></h4>
         <label>lastName</label>
-        <p><%= last.Name %>"</p>
+        <h4><%= user.lastName %></h4>
+       <% })%>
     </div>
 
-    <div>
-        <label>emailAdress</label>
-        <p><%= email.Adress %>"</p>
-    </div>
+   
 
     <button type="submit">Changing Password</button>
     <a href="user/edit">edit</a>
