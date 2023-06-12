@@ -5,6 +5,7 @@ const Schema=mongoose.Schema
 
 
  const movieSchema=new Schema({
+
   title: {
     type: String,
     required: true, 
@@ -15,7 +16,7 @@ const Schema=mongoose.Schema
   date: {type:Date},
   time:{type: String}
 
- })
+
 
 const Movie = mongoose.model('movie',movieSchema)
 
