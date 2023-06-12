@@ -3,6 +3,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const expressLyouts = require('express-ejs-layouts')
 const session = require('express-session')
+const passport = require('./lib/passportConfig')
 
 //Importing Routes
 
@@ -27,14 +28,14 @@ app.use(express.urlencoded({
     extended: true
 }))
 
-// app.use(session({
-//     secret:'This is a secret !',
-//     saveUninitialized: true,
-//     resave: false,
-//     cookie: {maxAge: 86400000}
-// }))
-// app.use(passport.initialize())
-// app.use(passport.session())
+app.use(session({
+    secret:'This is a secret !',
+    saveUninitialized: true,
+    resave: false,
+    cookie: {maxAge: 86400000}
+}))
+app.use(passport.initialize())
+app.use(passport.session())
 
 app.use(function(req, res, next){
     res.locals.currentUser = req.user
