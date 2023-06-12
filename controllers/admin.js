@@ -1,15 +1,13 @@
 //this page to do all basic crud operation for a movie 
 
 
-const response=require('express')
-
-const Movie=require('../models/Movie') //export movie model 
+const Movie = require('../models/Movie') //export movie model 
 
 //display all movies in the data base
 exports.movie_create_get= async (req,res)=>{
 try{
     console.log('movie added')
-    res.render('movie/add')
+    res.render('admin/add')
 
 }
 catch(error){
@@ -27,7 +25,7 @@ const movie=new Movie(req.body)
 movie.save()
 .then(()=>{
     console.log("your books has been saved into database")
-    return res.redirect('/movie/index')
+    return res.redirect('/admin/index')
 
 })
 .catch((error)=>{
