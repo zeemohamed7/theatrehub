@@ -9,8 +9,9 @@ const passport = require('./lib/passportConfig')
 
 const indexRoute = require('./routes/index') //HOME route
 const authRoute = require('./routes/auth')
+const bookingRoute = require('./routes/booking')
+const adminRoute = require('./routes/admin')
 const moviesRoute = require('./routes/movies')
-// const bookingRoute = require('./routes/booking')
 const userRoute = require('./routes/user')
 
 
@@ -50,18 +51,21 @@ app.use(function(req, res, next){
 app.use('/', indexRoute)
 app.use('/', authRoute)
 app.use('/', moviesRoute)
-// app.use('/', bookingRoute)
 app.use('/', userRoute)
+app.use('/', adminRoute)
+app.use('/', bookingRoute)
 
 
 app.listen(port, () => {
-    console.log(`Cinema is on port now ${port}`)
+    console.log(`Cinema is on port${port}`)
 })
+
+mongoose.set('strictQuery', false)
 
 mongoose.connect('mongodb+srv://deadmelissajames:AZ3K6OEWsqD3hJ1g@sei4cluster.uwzeppu.mongodb.net/Cinema',
 {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
 },
 ).then(() => {
     console.log('Mongoose Is Connected to MongoDB')

@@ -48,10 +48,7 @@ exports.auth_signin_post = passport.authenticate('local', {
     failureRedirect: '/auth/signin'
 }) 
 
-// // forgot password
-// exports.user_forgotpassword_post = async (req, res) => {
-//     res.render('user/forgotpassword')
-// }
+
 
 // Log out user (Invalidates session)
 exports.auth_logout_get  = (req, res) => {
