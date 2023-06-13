@@ -63,6 +63,7 @@ exports.user_profile_get = async (req, res) => {
             if (req.query.isEditing === 'true') {
                 let isEditing = true 
                 res.render('user/profile', {user, isEditing})
+                
             } else {
                 let isEditing = false
                 res.render('user/profile', {user, isEditing})
@@ -74,3 +75,14 @@ exports.user_profile_get = async (req, res) => {
         }
 }
 
+
+exports.user_profile_post = async(req, res) => {
+    try{
+        await User.findByIdAndUpdate(req.body.id, req.body)
+
+        res.redirect('/')
+    }
+    catch(error){
+        console.log(error)
+    }
+}

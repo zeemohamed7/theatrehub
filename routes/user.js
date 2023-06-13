@@ -13,6 +13,7 @@ router.get('/user/forgotpassword', isLoggedIn, userController.user_forgotpasswor
 router.post('/user/forgotpassword', isLoggedIn, userController.user_forgotpassword_post)
 router.post('/user/changepassword',isLoggedIn, userController.user_changepassword_post)
 router.get('/user/profile', isLoggedIn, userController.user_profile_get)
+router.post('/user/profile', userController.user_profile_post)
 
 
 module.exports = router
