@@ -6,6 +6,7 @@ const bookingCtrl = require('../controllers/booking')
 
 
 // Routes
-router.get('/booking', isLoggedIn, bookingCtrl.booking_get)
+router.get('/movies/detail', isLoggedIn, bookingCtrl.booking_get)
+router.post('/movies/detail', isLoggedIn, bookingCtrl.booking_confirm_post)
 
 module.exports = router
