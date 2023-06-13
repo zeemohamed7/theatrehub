@@ -1,6 +1,7 @@
 
 <!-- m_id:
 m_name: 
+
 m_description:
 m_genre:
 m_duration:
@@ -8,7 +9,7 @@ m_Date:
 m_Time -->
 
 
-<!-- this page to display all movie  -->
+<!-- this page to display all movie details  -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +21,8 @@ m_Time -->
     
     <table>
         <tr>
-            <th>movie name</th>
+            <th>movie title</th>
+            <th>movie picture </th>
             <th>movie description</th>
             <th>movie Genre</th>
             <th>movie date </th>
@@ -28,7 +30,7 @@ m_Time -->
         </tr>
     
     
-        <% books.forEach(function(book){ %>
+        <% movies.forEach(function(movie){ %>
             <!-- /book/detail?id=647898f51c2b7407d29f6c32 -->
             <tr>
                 <td>

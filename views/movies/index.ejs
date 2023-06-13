@@ -1,48 +1,38 @@
-<h3>movie Index</h3>
-
-
-
-
-
-
-
-
-<table>
-    <tr>
-        <th>name</th>
-        <th>Author</th>
-        <th>Genre</th>
-        <th>Fiction?</th>
-        <th>Pages</th>
-    </tr>
-
-
-    <% books.forEach(function(book){ %>
-        <!-- /book/detail?id=647898f51c2b7407d29f6c32 -->
-        <tr>
-            <td>
-                <a href="/book/detail?id=<%= book._id %>">
-                    <%= book.title %>
-                </a>
+<div>
+    <div class="main">
+        <h1>Book Your Next Movie!</h1>
+        <ul class="cards">
+      <% movies.forEach(function(movie){ %>
+          <li class="cards_item">
+            <div class="card">
+              <div class="card_image"><img src="https://picsum.photos/500/300"></div>
+              <div class="card_content">
+                <h2 class="card_title">  
+                  <!-- TITLE OF MOVIE   -->
                 
-            </td>
-            
-            <td>
-                <% book.author.forEach(function(obj, i){%>
-                    <%= i + 1 %>:<%= obj.name %>
-                <% }) %>
-            </td>
-            
-            <td><%= book.genre %> </td>
-            <td><%= book.isFiction %> </td>
-            <td><%= book.numberOfPages %> </td>
-            <td>
-                <form method="POST" action="/book/delete?id=<%=book._id%>">
-                    <button type="submit">DELETE</button>
-                </form>
-                <a href="/book/edit?id=<%=book._id%>">UPDATE</a>
+                  <%= movie.title %>
+                </h2>
 
-            </td>
-        </tr>
-    <% }) %>
-</table>
+                <p class="card_text"></p>
+
+
+                
+                <a href="/movies/detail?id=<%=movie._id %>"><button class="btn card_btn">Book</button></a>
+
+          
+      
+
+
+
+              </div>
+            </div>
+          </li>
+          <%}) %>
+
+        </ul>
+      </div>
+
+</div>
+
+
+
