@@ -1,17 +1,20 @@
+<form  method ='POST' action="/user/profile">
+    <% if (isEditing) {%>
+        <label> First Name </label><br>
+        <input value="<%= user.firstName %>"/><br>
 
-<div>
-        <form  action="/user/profile">
+        <label> last Name </label><br>
+        <input value="<%= user.lastName %>"/><br>
+    <% } else {%>
+        <label> First Name </label>
+        <h2 value="<%= user.firstName %>"><%= user.firstName %> </h2>
 
-    <label> First Name </label>
-    <h2 value="<%= user.firstName %>"><%= user.firstName %> </h2>
-    <label> last Name </label>
-    <h2 value="<%= user.lastName %>"> <%= user.lastName %></h2>
-</form>
-        </div>
-    
-    
-    
-    
-        <button type="submit">Changing Password</button>
-        <button>edit</button>
+        <label> last Name </label>
+        <h2 value="<%= user.lastName %>"> <%= user.lastName %></h2>
+
         <a href="/user/profile?isEditing=true&id=<%= user._id %>">Edit</a>
+    <% } %>
+    
+    <button type="submit">Changing Password</button>
+</form>
+       

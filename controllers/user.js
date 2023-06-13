@@ -2,6 +2,7 @@ const bcrypt = require('bcrypt') // import bcrypt packages
 const passport = require('../lib/passportConfig') // import passport
 
 const User = require('../models/User')
+const { object } = require('webidl-conversions')
 
 exports.user_forgotpassword_get = async (req, res) => {
     res.render('user/forgotpassword')
@@ -10,11 +11,14 @@ exports.user_forgotpassword_get = async (req, res) => {
 
 exports.user_forgotpassword_post = async (req, res) => {
     try {
-        const user = await User.find({emailAddress: req.body.emailAddress})
+        const user = await  User.findOne({emailAddress: req.body.emailAddress})
         if (user) {
             res.render('user/changepassword', {user})
-        } else if (!user) {
-            res.send('User Not Found')
+        } else {
+            
+            console.log('User Not Found')
+            res.redirect('/auth/signup')
+            
         }
         console.log(user)
     }
@@ -49,22 +53,19 @@ exports.user_changepassword_post = async (req, res) => {
 
 exports.user_profile_get = async (req, res) => {
         try {
-            if true {
-                console.log(req.query.isEditing)
-                do nothing
-            }
-            // if true console.log(req.query.isEditing)
-            // do nothing
-
-            // else const isEditing = false
-
-
-            console.log(req.query.id)
+            let isEditing = false
+            console.log(req.query.isEditing) 
 
             const user = await User.findById(req.query.id)
-            console.log(user)
 
-            res.render('user/profile', {user})
+            if (req.query.isEditing === 'true') {
+                let isEditing = true 
+                res.render('user/profile', {user, isEditing})
+            } else {
+                let isEditing = false
+                res.render('user/profile', {user, isEditing})
+            }
+            console.log(isEditing)
         }
         catch (err) {
             console.log('errorrr')

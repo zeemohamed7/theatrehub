@@ -27,7 +27,7 @@ exports.auth_signup_post = async (req, res, error) => {
 
     await user.save()
 
-    res.redirect('/');
+    res.redirect('/auth/signin');
   
 }
 
