@@ -1,9 +1,10 @@
-// comment
+
 const express = require('express')
 const mongoose = require('mongoose')
 const expressLyouts = require('express-ejs-layouts')
 const session = require('express-session')
 const passport = require('./lib/passportConfig')
+const isAdmin = require('./lib/isAdmin')
 
 //Importing Routes
 
@@ -14,7 +15,7 @@ const adminRoute = require('./routes/admin')
 const moviesRoute = require('./routes/movies')
 const userRoute = require('./routes/user')
 
-
+const User = require('./models/User')
 
 // initialize the App
 
@@ -43,8 +44,13 @@ app.use(passport.session())
 
 app.use(function(req, res, next){
     res.locals.currentUser = req.user
+
+
     next()
 })
+
+
+
 
 // Mount the Routes
 
@@ -72,5 +78,6 @@ mongoose.connect('mongodb+srv://deadmelissajames:AZ3K6OEWsqD3hJ1g@sei4cluster.uw
 }).catch((err) => {
     console.log('An error occured', err)
 })
+
 
 
