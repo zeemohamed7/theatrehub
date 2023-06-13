@@ -52,8 +52,7 @@
           </li>
           <% if (currentUser) {%>
           <li class="nav-item">
-            <a class="nav-link" href="/user/profile?id=<%= currentUser._id %>"><i class="fa fa-fw fa-user"></i>&nbsp;<%= currentUser.firstName %></a>
-          </li>
+            <a class="nav-link" href="/user/profile?isEditing=false&id=<%= currentUser._id %>"><i class="fa fa-fw fa-user"></i>&nbsp;<%= currentUser.firstName %></a>          </li>
           <li class="nav-item">
             <a class="nav-link" href="/auth/logout"> Log Out</a>
           </li>

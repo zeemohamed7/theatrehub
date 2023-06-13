@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt') // import bcrypt packages
 const passport = require('../lib/passportConfig') // import passport
 
 const User = require('../models/User')
+const { object } = require('webidl-conversions')
 
 exports.user_forgotpassword_get = async (req, res) => {
     res.render('user/forgotpassword')
@@ -11,11 +12,14 @@ exports.user_forgotpassword_get = async (req, res) => {
 
 exports.user_forgotpassword_post = async (req, res) => {
     try {
-        const user = await User.find({emailAddress: req.body.emailAddress})
+        const user = await  User.findOne({emailAddress: req.body.emailAddress})
         if (user) {
             res.render('user/changepassword', {user})
-        } else if (!user) {
-            res.send('User Not Found')
+        } else {
+            
+            console.log('User Not Found')
+            res.redirect('/auth/signup')
+            
         }
         console.log(user)
     }
@@ -27,20 +31,17 @@ exports.user_forgotpassword_post = async (req, res) => {
 
 exports.user_changepassword_post = async (req, res) => {
     try {
-        const user = await User.find({emailAddress: req.body.emailAddress})
+        const newPassword = req.body.newPassword
+        const confirmPassword = req.body.confirmPassword
 
-        const password = req.body.password
-        const confirm_password = req.body.confirm_password
-
-        if(password === confirm_password) {
-            const pass = req.body.password.toString();
+        if(newPassword === confirmPassword) {
+            const pass = req.body.newPassword.toString();
             const hash = bcrypt.hashSync(pass, 10)
 
             await User.findOneAndUpdate({emailAddress: req.body.emailAddress, password: hash})
             res.redirect('/auth/signin')
         } else {
-            res.redirect('/user/changepassword', {user}); 
-            console.log('Your new passwords dont match')
+            res.redirect('/');
         }
         
     }
@@ -51,23 +52,22 @@ exports.user_changepassword_post = async (req, res) => {
     }
 }
 
+
 exports.user_profile_get = async (req, res) => {
         try {
-
-                console.log(req.query.isEditing)
-
-            // if true console.log(req.query.isEditing)
-            // do nothing
-
-            // else const isEditing = false
-
-
-            console.log(req.query.id)
+            let isEditing = false
+            console.log(req.query.isEditing) 
 
             const user = await User.findById(req.query.id)
-            console.log(user)
 
-            res.render('user/profile', {user})
+            if (req.query.isEditing === 'true') {
+                let isEditing = true 
+                res.render('user/profile', {user, isEditing})
+            } else {
+                let isEditing = false
+                res.render('user/profile', {user, isEditing})
+            }
+            console.log(isEditing)
         }
         catch (err) {
             console.log('errorrr')
