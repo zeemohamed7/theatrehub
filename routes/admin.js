@@ -11,8 +11,6 @@ const adminController=require('../controllers/admin')
 router.get('/admin/add',adminController.movie_create_get)
 router.post('/admin/add',adminController.movie_create_post)
 
-
-
 router.get('/admin/index',adminController.movie_index_get)
 router.post('/admin/delete',adminController.movie_delete)
 

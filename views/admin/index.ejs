@@ -1,28 +1,36 @@
+
+
+
+
 <h3>movie Index</h3>
-
-
+<br>
+<br>
+<div class="container">
 <table>
     <tr>
         <th>title</th>
-        <!-- <th>picture</th> -->
+         <th>picture</th> 
         <th>discription</th>
         <th>Genre</th>
-        <th>duration</th>
-        <th>date</th>
-        <th>time</th>
+        <th>duration  </th>
+        <th>date  </th>
+        <th>time  </th>
+        <th>delete  </th>
+        <th>update  </th>
     </tr>
 
     <% movies.forEach(function(movie){  %>
     <tr>
 
-
-<td>
-<%=movie.image%>
-</td>
-
   <td>
 <%=movie.title%>
   </td>
+
+
+  <td>
+    <img src="/public/movie_images/<%=movie.image%>" width="100px" height="100px" >
+   </td>
+
 
   <td>
     <%=movie.description%>
@@ -36,7 +44,7 @@
         <%=movie.duration%>
           </td>
 
-    <td>
+        <td>
         <%=movie.date%>
           </td>
 
@@ -55,3 +63,5 @@
     </tr>
    <% })  %>
 </table>
+
+</div>

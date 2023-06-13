@@ -36,10 +36,10 @@ catch(error){
 //     console.log("an error occured",error)
 // })
 // }
+//////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-
-const Storage=multer.diskStorage({
+    const Storage=multer.diskStorage({
 
     destination:'public/movie_images',
     filename: (req,file,cb)=>{
@@ -49,18 +49,9 @@ const Storage=multer.diskStorage({
     })
     
     
-    const upload =multer({
-    storage:Storage,
-    
-    })
-    
-    
-
-
-
-
-
-
+       const upload =multer({
+       storage:Storage,
+       })
 
 
 
@@ -86,9 +77,14 @@ time:req.body.time
  console.log("an error occured",error)
   })
 
-
 }
 
+
+
+
+
+    
+    
 
 
 
