@@ -82,31 +82,30 @@ mongoose.connect('mongodb+srv://deadmelissajames:AZ3K6OEWsqD3hJ1g@sei4cluster.uw
 
 
 
-//image upload 
+// //image upload 
 
-const  fileStorageEngine = multer.diskStorage({
-    destination:(req,file,cb)=>{
-      cd(null,'./images')
-    },
-   filename:(req,file,cb)=>{
-  cb(null,Date.now()+"--"+file.originalname)
-   }
-    })
-    
-  
-    const upload = multer({storage:fileStorageEngine});
+// const  fileStorageEngine = multer.diskStorage({
+//     destination:(req,file,cb)=>{
+//       cd(null,'./images')
+//     },
+//    filename:(req,file,cb)=>{
+//   cb(null,Date.now()+"--"+file.originalname)
+//    }
+//     })
+
+//     const upload = multer({storage:fileStorageEngine});
        
-  app.post('/single',upload.single("image"),(req,res)=>{
-      console.log(req.file)
-      res.send('sinle file uploded')
-  })
+//   app.post('/single',upload.single("image"),(req,res)=>{
+//       console.log(req.file)
+//       res.send('sinle file uploded')
+//   })
   
   
-  app.post('/multiple',upload.array('images',3),(req,res)=>{
-      console.log(req.files)
-  res.send('mutiple files has been loaded ')
+//   app.post('/multiple',upload.array('images',3),(req,res)=>{
+//       console.log(req.files)
+//   res.send('mutiple files has been loaded ')
   
-  })
+//   })
 
 
 

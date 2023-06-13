@@ -3,6 +3,13 @@
 
 const Movie = require('../models/Movie') //export movie model 
 
+const multer=require('multer')
+
+
+
+
+
+
 //display all movies in the data base
 exports.movie_create_get= async (req,res)=>{
 try{
@@ -13,25 +20,91 @@ try{
 catch(error){
     console.log(error.message)
 }
-
 }
-
-
 //adds the movie data into database
-exports.movie_create_post=(req,res)=>{
-console.log(req.body)
+// exports.movie_create_post=(req,res)=>{
+// console.log(req.body)
 
-const movie=new Movie(req.body) 
-movie.save()
+// const movie=new Movie(req.body) 
+// movie.save()
+// .then(()=>{
+//     console.log("your movie has been saved into database")
+//     return res.redirect('/admin/index')
+
+// })
+// .catch((error)=>{
+//     console.log("an error occured",error)
+// })
+// }
+
+
+
+const Storage=multer.diskStorage({
+
+    destination:'public/movie_images',
+    filename: (req,file,cb)=>{
+        //cb(null,Date.now())
+        cb(null,file.originalname)
+    }
+    })
+    
+    
+    const upload =multer({
+    storage:Storage,
+    
+    })
+    
+    
+
+
+
+
+
+
+
+
+
+
+//adding a movie to data base with image 
+exports.movie_create_post=upload.single('movie_image'),(req,res)=>{
+Movie.create({
+title:req.body.title,
+image:req.file.filename,
+description:req.body.description,
+genre:req.body.genre,
+duration:req.body.duration,
+date:req.body.date,
+time:req.body.time
+})
 .then(()=>{
-    console.log("your movie has been saved into database")
-    return res.redirect('/admin/index')
-
+    console.log(req.body)
+        console.log("your movie has been saved into database")
+        return res.redirect('/admin/index')
+    
 })
 .catch((error)=>{
-    console.log("an error occured",error)
-})
+ console.log("an error occured",error)
+  })
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
