@@ -12,10 +12,10 @@ title:
 
 
 <!-- <form method="POST" action="/movie/add" enctype="multipart/form-data"  > -->
-    <form method="POST" action="/movie/add" >
+    <form method="POST" action="/admin/add" >
         <div>
         
-        <label> movie title </label>
+        <label>Title</label>
         <input type="text" name="title"  > 
         </div>
         
@@ -25,32 +25,41 @@ title:
         </div> -->
         
            <div>
-            <label> movie description</label>
+            <label>Description</label>
             <input type="text" name="description"  >
             </div>
         
         <div>
-        <label >Genere</label>
+        <label >Genre</label>
         <input type="text" name="genre"  >
         </div>
         
         <div>
-            <label >duration </label>
+            <label>Duration </label>
             <input type="number" name="duration"  >
             </div>
         
         <div>
-        <label>start date </label>
-        <input type="date" name="date"   >
-        </div>
+            <label>Select Show Times </label>
+            <select name="showTimes" multiple="multiple"> 
+                <% timeOptions.forEach(function(time) {%>
+
+                <option value="<%= time%>">
+                    <%= time %>
+
+                </option>
+                <% }) %>
+    
+    
+            </select>
+          
+
+            </div>
+
+           <p>Show days shown:</p> <%= dayOptions %>  
         
         <div>
-        <label>start time </label>
-        <input type="time" name="time"  >
-        </div>
-        
-        <div>
-        <input type="submit" value="submit"></input>
+        <input type="submit" value="Add"></input>
         </div>
         
         </form>

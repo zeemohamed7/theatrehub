@@ -62,8 +62,15 @@
             <a class="nav-link" href="/auth/signin"><i class="fa fa-fw fa-user"></i> Login</a>
           </li>
         <% } %>
+        <% if ( (currentUser) && (currentUser.userType === "admin")){%>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/index"><i class="fa fa-fw fa-user"></i> Admin</a>
+          </li>
+        <% } %>
+
 
       </ul>
+      
 
       <nav class="navbar">
         <div class="container-fluid">
@@ -73,6 +80,7 @@
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
         </div>
+
       </nav>
 
     </nav>

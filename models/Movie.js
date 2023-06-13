@@ -1,7 +1,6 @@
 
 const mongoose = require('mongoose');
 
-
 const movieSchema=mongoose.Schema({
 
   title: {
@@ -17,8 +16,8 @@ const movieSchema=mongoose.Schema({
     type:String,
     required:true},
   duration:{type:Number},
-  showdays: {type:Date},
-  showtimes:{type: String}
+  showDays: {type: Array, },
+  showTimes:{type: Array}
 
 })
 
