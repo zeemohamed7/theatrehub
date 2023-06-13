@@ -38,77 +38,40 @@ src="https://www.youtube.com/embed?v=mP0VHJYFOAU">
     </a>
 </div>
 
-<div>
-    <div class="main">
-        <h1>Book Your Next Movie!</h1>
-        <ul class="cards">
-          <li class="cards_item">
-            <div class="card">
-              <div class="card_image"><img src="https://picsum.photos/500/300"></div>
-              <div class="card_content">
-      <% movies.forEach(function(movie){ %>
-                
-                <h2 class="card_title">                 
-                   <%= movie.title %>
-                </h2>
-                <p class="card_text"></p>
-                <a href="/movies/detail?id=<%=movie._id %>"><button class="bookbtn btn card_btn">Book</button></a>
-              </div>
-            </div>
-          </li>
-          <%}) %>
 
-          <li class="cards_item">
-            <div class="card">
-              <div class="card_image"><img src="https://picsum.photos/500/300"></div>
-              <div class="card_content">
-                <h2 class="card_title">Card Grid Layout</h2>
-                <p class="card_text"></p>
-                <button class="bookbtn btn card_btn">Book</button>
-              </div>
+<div>
+  <div class="main">
+      <h1>Book Your Next Movie!</h1>
+      <ul class="cards">
+    <% movies.forEach(function(movie){ %>
+        <li class="cards_item">
+          <div class="card">
+            <div class="card_image"><img src="https://picsum.photos/500/300"></div>
+            <div class="card_content">
+              <h2 class="card_title">  
+                <!-- TITLE OF MOVIE   -->
+              
+                <%= movie.title %>
+              </h2>
+
+              <p class="card_text"></p>
+
+
+              
+              <a href="/movies/detail?id=<%=movie._id %>"><button class="btn card_btn">Book</button></a>
+
+        
+    
+
+
+
             </div>
-          </li>
-          <li class="cards_item">
-            <div class="card">
-              <div class="card_image"><img src="https://picsum.photos/500/300/?image=11"></div>
-              <div class="card_content">
-                <h2 class="card_title">Card Grid Layout</h2>
-                <p class="card_text"></p>
-                <button class="bookbtn btn card_btn">Book</button>
-              </div>
-            </div>
-          </li>
-          <li class="cards_item">
-            <div class="card">
-              <div class="card_image"><img src="https://picsum.photos/500/300/?image=14"></div>
-              <div class="card_content">
-                <h2 class="card_title">Card Grid Layout</h2>
-                <p class="card_text"></p>
-                <button class="bookbtn btn card_btn">Book</button>
-              </div>
-            </div>
-          </li>
-          <li class="cards_item">
-            <div class="card">
-              <div class="card_image"><img src="https://picsum.photos/500/300/?image=17"></div>
-              <div class="card_content">
-                <h2 class="card_title">Card Grid Layout</h2>
-                <p class="card_text"></p>
-                <button class="bookbtn btn card_btn">Book</button>
-              </div>
-            </div>
-          </li>
-          <li class="cards_item">
-            <div class="card">
-              <div class="card_image"><img src="https://picsum.photos/500/300/?image=2"></div>
-              <div class="card_content">
-                <h2 class="card_title">Card Grid Layout</h2>
-                <p class="card_text"></p>
-                <button class="bookbtn btn card_btn">Book</button>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
+          </div>
+        </li>
+        <%}) %>
+
+      </ul>
+    </div>
 
 </div>
+

@@ -17,8 +17,8 @@ const movieSchema=mongoose.Schema({
     type:String,
     required:true},
   duration:{type:Number},
-  date: {type:Date},
-  time:{type: String}
+  showdays: {type:Date},
+  showtimes:{type: String}
 
 })
 

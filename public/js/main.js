@@ -49,7 +49,7 @@ const signupbtn = $('#signup')
 
 
 $(document).ready(function () {
-  input.keyup(() => {
+  password, confirm_password.keyup(() => {
     
     console.log(password.val())
     console.log(confirm_password.val())

@@ -1,0 +1,64 @@
+
+<!-- m_id:
+m_name: 
+
+m_description:
+m_genre:
+m_duration:
+m_Date:
+m_Time -->
+
+
+<!-- this page to display all movie details  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <table>
+        <tr>
+            <th>movie title</th>
+            <th>movie picture </th>
+            <th>movie description</th>
+            <th>movie Genre</th>
+            <th>movie date </th>
+            <th>movie time </th>
+        </tr>
+    
+    
+        <% movies.forEach(function(movie){ %>
+            <!-- /book/detail?id=647898f51c2b7407d29f6c32 -->
+            <tr>
+                <td>
+                    <a href="/movie/detail?id=<%= movie._id %>">
+                    <%= movie.name%>
+                    </a>
+                </td>
+                
+                <td><%= movie.description %> </td>
+                <td><%= movie.genre %> </td>
+                <td><%= movie.duration %> </td>
+                <td><%= movie.date %> </td>
+                <td><%= movie.time %> </td>
+
+
+                <td>
+                    <form method="POST" action="/movie/delete?id=<%=movie._id%>">
+                        <button type="submit">DELETE</button>
+                    </form>
+                    <a href="/movie/edit?id=<%=movie._id%>">UPDATE</a>
+    
+                </td>
+            </tr>
+        <% }) %>
+    </table>
+
+
+
+
+</body>
+</html>
