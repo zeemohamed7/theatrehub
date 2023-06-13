@@ -23,6 +23,12 @@ router.post('/admin/edit',adminController.movie_edit_post)
 
 
 
+//this for uploading an images 
+
+
+
+
+
 
 
 module.exports=router
