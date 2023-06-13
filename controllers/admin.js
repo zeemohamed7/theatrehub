@@ -1,15 +1,13 @@
 //this page to do all basic crud operation for a movie 
 
 
-const response=require('express')
-
-const Movie=require('../models/Movie') //export movie model 
+const Movie = require('../models/Movie') //export movie model 
 
 //display all movies in the data base
 exports.movie_create_get= async (req,res)=>{
 try{
     console.log('movie added')
-    res.render('movie/add')
+    res.render('admin/add')
 
 }
 catch(error){
@@ -20,14 +18,14 @@ catch(error){
 
 
 //adds the movie data into database
-exports.book_create_post=(req,res)=>{
+exports.movie_create_post=(req,res)=>{
 console.log(req.body)
 
 const movie=new Movie(req.body) 
 movie.save()
 .then(()=>{
-    console.log("your books has been saved into database")
-    return res.redirect('/movie/index')
+    console.log("your movie has been saved into database")
+    return res.redirect('/admin/index')
 
 })
 .catch((error)=>{
@@ -40,9 +38,9 @@ movie.save()
 //get a list of all movies 
 exports.movie_index_get=async(req,res)=>{
 try{
-const movies=await movie.find()
-console.log(movies)
-res.send('movie/index',{movies})
+const movies=await Movie.find()
+// console.log(movies)
+res.render('admin/index',{movies})
 }catch(error){
 console.log(error.message)
 res.send('something is not right')
@@ -51,22 +49,26 @@ res.send('something is not right')
 
 
 exports.movie_delete=async(req,res)=>{
-    console.log(req.query.id)
-  
+   
+
     try{
-    await movie.findByIdAndDelete(req.query.id)
- return res.redirect('/movie/index')
+        console.log('hi')
+    await Movie.findByIdAndDelete(req.query.id)
+ return res.redirect('/admin/index')
     }
    catch(error){
     res.send(error.message)
-   }
+   } finally {
+    // Execute this code after no matter what
+    console.log('We are in the finally block')
+}
 
 }
 
 //get all movie details and display it  movie/detail
 exports.movie_detail_get=async(req,res)=>{
 try{
-const movie=await movie.findById(req.query.id)
+const movie = await Movie.findById(req.query.id)
 res.render('movie/detail',{movie})
 }catch(error){
     console.log(error.message)
@@ -76,8 +78,8 @@ res.render('movie/detail',{movie})
 
 exports.movie_edit_get=async(req,res)=>{
 try{
-const movie=await movie.findById(req.query.id)
-res.render('book/edit',{movie})
+const movie=await Movie.findById(req.query.id)
+res.render('admin/edit',{movie})
 }
 catch(error){
     console.log(error.message)
@@ -88,8 +90,8 @@ catch(error){
 exports.movie_edit_post=async(req,res)=>{
 try{
 console.log(req.body.id)
-await movie.findByIdAndUpdate(req.body.id,req.body)
-res.redirect('/movie/index')
+await Movie.findByIdAndUpdate(req.body.id,req.body)
+res.redirect('/admin/index')
 }
 catch(error){
 console.log(error.message)

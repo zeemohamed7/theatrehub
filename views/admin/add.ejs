@@ -1,56 +1,56 @@
-<!-- this pg to add a movie using a form  -->
+<!-- this pg to add one  movie using a form  -->
 
 
 <!-- 
-m_id:{type:String, unique: true},
-m_name: 
-m_description:
-m_genre:
-m_duration:
-m_Date:
-m_Time:
- -->
+title: 
+ picture:
+  description:
+  genre:
+  duration:
+  date:
+  time:-->
 
 
-<form method="POST" action="/book/add" enctype="multipart/form-data"  >
-<div>
-
-<label> movie name </label>
-<input type="text" name="name"  > 
-</div>
-
-<div>
-<label > movie picture </label>
-<input type="image" name="image">
-</div>
-
-<div>
-    <label> movie description</label>
-    <input type="text" name="description"  >
-    </div>
-
-    
-    
-<div>
-<label >Genere</label>
-<input type="text" name="genre"  >
-</div>
-
-<div>
-    <label >duration </label>
-    <input type="number" name="duration"  >
-    </div>
-
-<div>
-<label>start date </label>
-<input type="date" name="date" value="<%=movie.date%>"  >
-</div>
-
-
-<div>
-<label>start time </label>
-<input type="time" name="time" value="<%=movie.time%>" >
-</div>
-
-
-</form>
+<!-- <form method="POST" action="/movie/add" enctype="multipart/form-data"  > -->
+    <form method="POST" action="/movie/add" >
+        <div>
+        
+        <label> movie title </label>
+        <input type="text" name="title"  > 
+        </div>
+        
+        <!-- <div>
+        <label > movie picture </label>
+        <input type="file" name="img" type="file" accept=".png, .jpg, .jpeg" > 
+        </div> -->
+        
+           <div>
+            <label> movie description</label>
+            <input type="text" name="description"  >
+            </div>
+        
+        <div>
+        <label >Genere</label>
+        <input type="text" name="genre"  >
+        </div>
+        
+        <div>
+            <label >duration </label>
+            <input type="number" name="duration"  >
+            </div>
+        
+        <div>
+        <label>start date </label>
+        <input type="date" name="date"   >
+        </div>
+        
+        <div>
+        <label>start time </label>
+        <input type="time" name="time"  >
+        </div>
+        
+        <div>
+        <input type="submit" value="submit"></input>
+        </div>
+        
+        </form>
