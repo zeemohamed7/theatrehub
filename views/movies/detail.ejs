@@ -7,6 +7,7 @@
             <div class="row justify-content-center">
               <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 <h2> <%= movie.title %></h2>
+<img src="../movie_images/<%=movie.img%>" width="300px" height="300px" >
 <!-- this page is for one movie detail -->
 <p> <%= movie.description %></p>
 <p>Genre: <%= movie.genre %></p>
@@ -16,25 +17,17 @@
 <form method="POST" action="/movies/detail">
 <label>Select Show Time </label>
 <select name="showTimes">
-<% movie.showTimes.forEach(function(time){ %>
-  <option>
-      <%= time %>
-  </option>
-  <% }) %>
+    <option> 10: 00 - 12: 00</option>
 </select>
 <label>Select Show Day </label>
 <select name="showDays" >
-  <% dayOptions.forEach(function(day) {%>
-  <option value="<%= day %>">
-      <%= day %>
-  </option>
-  <% }) %>
+    <% dayOptions.forEach(function(day) {%>
+    <option value="<%=day%>">
+        <%= day %>
+    </option>
+    <% }) %>
 </select>
 <input type="hidden" name="title" value="<%= movie.title %>">
-<% if (currentUser) {%>
-
-<input type="hidden" name="emailAddress" value="<%= currentUser.emailAddress %>">
-<% } %>
 <button type="submit">Confirm Booking</button>
 </form>
 </div>
@@ -48,10 +41,3 @@
     </div>
   </div>
 </section>
-
-
-
-
-
-
-

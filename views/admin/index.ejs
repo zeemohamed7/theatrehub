@@ -1,4 +1,3 @@
-<h3>Movies Index</h3>
 
 <!-- 
 title: {
@@ -17,6 +16,9 @@ title: {
 
 
 <!-- this page to display a table of all movies for the admin to edit or delete -->
+<div class="container">
+  <h3>Movies Index</h3>
+
 <table>
     <tr>
         <th>Title</th>
@@ -27,11 +29,8 @@ title: {
         <th>Showdays</th>
         <th>Showtimes</th>
     </tr>
-
-
     <% movies.forEach(function(movie){  %>
     <tr>
-
   <td>
 <%=movie.title%>
   </td>
@@ -41,36 +40,27 @@ title: {
   <td>
     <%=movie.description%>
       </td>
-
       <td>
         <%=movie.genre%>
       </td>
-
       <td>
         <%=movie.duration%>
           </td>
 
     <td>
-      <%= dayOptions %>  
-
+        <%=movie.date%>
           </td>
-
-          <td>
-            <% movie.showTimes.forEach(function(time){ %>
-                  <%= time %>
-              <% }) %>
-              </td>
-
-              
+      
         <td>
             <form method="POST" action="/admin/delete?id=<%=movie._id%>">
                 <button type="submit">DELETE</button>
             </form>
         </td>
     <td><a href="/admin/edit?id=<%=movie._id%>">UPDATE</a></td>
-
     </tr>
    <% })  %>
 </table>
+</div>
 
-<a href="/admin/add">Add Movies</a>
+
+</div>

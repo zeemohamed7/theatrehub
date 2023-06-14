@@ -1,22 +1,35 @@
 <div>
-  <div class="main">
-      <h1>Book Your Next Movie!</h1>
-      <ul class="cards">
-    <% movies.forEach(function(movie){ %>
-        <li class="cards_item">
-          <div class="card">
-            <div class="card_image"><img src="https://picsum.photos/500/300"></div>
-            <div class="card_content">
-              <h2 class="card_title">
-                <!-- TITLE OF MOVIE   -->
-                <%= movie.title %>
-              </h2>
-              <p class="card_text"></p>
-              <a href="/movies/detail?id=<%=movie._id %>"><button class="btn card_btn">Book</button></a>
+    <div class="main">
+        <h1>Book Your Next Movie!</h1>
+        <ul class="cards">
+      <% movies.forEach(function(movie){ %>
+          <li class="cards_item">
+            <div class="card">
+              <div class="card_image"><img src="https://picsum.photos/500/300"></div>
+              <div class="card_content">
+                <h2 class="card_title">  
+                  <!-- TITLE OF MOVIE   -->
+                
+                  <%= movie.title %>
+                </h2>
+
+                <p class="card_text"></p>
+
+
+                
+                <a href="/movies/detail?id=<%=movie._id %>"><button class="btn card_btn">Book</button></a>
+
+          
+      
+
+
+
+              </div>
             </div>
-          </div>
-        </li>
-        <%}) %>
-      </ul>
-    </div>
+          </li>
+          <%}) %>
+
+        </ul>
+      </div>
+
 </div>
