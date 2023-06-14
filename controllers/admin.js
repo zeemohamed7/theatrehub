@@ -69,6 +69,7 @@ exports.movie_delete=async(req,res)=>{
    
 
     try{
+
     await Movie.findByIdAndDelete(req.query.id)
  return res.redirect('/admin/index')
     }

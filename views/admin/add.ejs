@@ -13,53 +13,46 @@ title:
 
 <!-- <form method="POST" action="/movie/add" enctype="multipart/form-data"  > -->
     <form method="POST" action="/admin/add" >
-        <div>
-        
-        <label>Title</label>
-        <input type="text" name="title"  > 
-        </div>
-        
-        <!-- <div>
-        <label > movie picture </label>
-        <input type="file" name="img" type="file" accept=".png, .jpg, .jpeg" > 
-        </div> -->
-        
-           <div>
-            <label>Description</label>
-            <input type="text" name="description"  >
-            </div>
-        
-        <div>
-        <label >Genre</label>
-        <input type="text" name="genre"  >
-        </div>
-        
-        <div>
-            <label>Duration </label>
-            <input type="number" name="duration"  >
-            </div>
-        
-        <div>
-            <label>Select Show Times </label>
-            <select name="showTimes" multiple="multiple"> 
-                <% timeOptions.forEach(function(time) {%>
+<div>
 
-                <option value="<%= time%>">
-                    <%= time %>
+<label>Title </label>
+<input type="text" name="title"  > 
+</div>
 
-                </option>
-                <% }) %>
-    
-    
-            </select>
-          
+<!-- <div>
+<label > movie picture </label>
+<input type="file" name="img" type="file" accept=".png, .jpg, .jpeg" > 
+</div> -->
 
-            </div>
+   <div>
+    <label>Description</label>
+    <input type="text" name="description"  >
+    </div>
 
-           <p>Show days shown:</p> <%= dayOptions %>  
-        
-        <div>
-        <input type="submit" value="Add"></input>
-        </div>
-        
-        </form>
+<div>
+<label >Genere</label>
+<input type="text" name="genre"  >
+</div>
+
+<div>
+    <label >Duration </label>
+    <input type="number" name="duration"  >
+    </div>
+
+<div>
+<label>Select Show Times </label>
+<input type="date" name="date"   >
+
+<% timeOptions.forEach(function(time) {%>
+    <option value="<%= time%>">
+        <%= time %>
+    </option>
+    <% }) %>
+</select>
+</div>
+<p>Show days shown:</p> <%= dayOptions %>
+<div>
+<input type="submit" value="Add"></input>
+</div>
+
+</form>

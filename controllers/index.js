@@ -1,5 +1,7 @@
 
 
+//Display homepage
+
 const Movie = require('../models/Movie')
 //Display homepage
 
