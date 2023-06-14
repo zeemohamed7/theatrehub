@@ -30,7 +30,7 @@ title:
     </div>
 
 <div>
-<label >Genere</label>
+<label>Genre</label>
 <input type="text" name="genre"  >
 </div>
 
@@ -41,7 +41,7 @@ title:
 
 <div>
 <label>Select Show Times </label>
-<input type="date" name="date"   >
+<select name="showTimes" multiple="multiple"> 
 
 <% timeOptions.forEach(function(time) {%>
     <option value="<%= time%>">

@@ -15,10 +15,8 @@ router.get('/admin/index',isLoggedIn, isAdmin,adminController.movie_index_get)
 router.post('/admin/delete', isLoggedIn, isAdmin,adminController.movie_delete)
 
 //one movie info 
-router.get('/admin/details',isLoggedIn,isAdmin, adminController.movie_detail_get)
 
 router.get('/admin/edit', isLoggedIn,isAdmin,adminController.movie_edit_get) //loads the edit info 
-
 router.post('/admin/edit',isLoggedIn,isAdmin, adminController.movie_edit_post)
 
 // list movie options
