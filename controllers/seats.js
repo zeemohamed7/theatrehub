@@ -3,7 +3,7 @@ const Seats = require('../models/Booking')
 
 exports.seats_create_get = async (req, res) => {
     try {
-        const seats = await Seats.click()
+        const seats = await Seats.find()
         console.log(seats)
         res.render('seats/booking', { seats})
 

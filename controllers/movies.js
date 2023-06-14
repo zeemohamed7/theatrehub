@@ -1,7 +1,6 @@
 
 // Display movie detail page for user
 const Movie = require('../models/Movie')
-const User = require('../models/User')
 
 
 
@@ -36,7 +35,6 @@ exports.movie_detail_get = async(req, res) => {
         }
         const movie = await Movie.findById(req.query.id)
 
-
         res.render('movies/detail', {movie, dayOptions})
 
 
@@ -45,3 +43,4 @@ exports.movie_detail_get = async(req, res) => {
         res.send(error)
     }
 }
+

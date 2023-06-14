@@ -6,6 +6,7 @@ const User = require('../models/User')
 const { object } = require('webidl-conversions')
 const Booking = require('../models/Booking')
 
+
 exports.user_forgotpassword_get = async (req, res) => {
     res.render('user/forgotpassword')
     
@@ -58,6 +59,7 @@ exports.user_changepassword_post = async (req, res) => {
 exports.user_changepassword_get = async (req, res) => {
     res.render('user/changepassword')
 }
+
 exports.user_profile_get = async (req, res) => {
         try {
 

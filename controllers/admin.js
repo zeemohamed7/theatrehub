@@ -1,4 +1,13 @@
+//this page to do all basic crud operation for a movie
+const Movie = require('../models/Movie') //export movie model
+const multer=require('multer')
+//display all movies in the data base
+// exports.movie_create_get= async (req,res)=>{
+// try{
+//     console.log('movie added')
+//     res.render('admin/add')
 //this page to do all basic crud operation for a movie 
+// }
 
 
 const Movie = require('../models/Movie') //export movie model 
@@ -33,10 +42,6 @@ catch(error){
 }
 }
 
-
-
-
-
 //adding a movie to data base with image
 exports.movie_create_post=(req,res)=>{
     console.log('req.body', req.body)
@@ -60,10 +65,6 @@ time:req.body.time
   })
 }
 
-
-
-
-//get a list of all movies 
 exports.movie_index_get=async(req,res)=>{
 try{
 const movies=await Movie.find()
@@ -74,12 +75,9 @@ console.log(error.message)
 res.send('something is not right')
 }
 }
-
-
 exports.movie_delete=async(req,res)=>{
-   
-
     try{
+        console.log('hi')
 
     await Movie.findByIdAndDelete(req.query.id)
     console.log('Movie has been deleted')
@@ -87,8 +85,22 @@ exports.movie_delete=async(req,res)=>{
     }
    catch(error){
     res.send(error.message)
-   } 
+   } finally {
+    // Execute this code after no matter what
+    console.log('We are in the finally block')
 }
+}
+//get all movie details and display it  movie/detail
+exports.movie_detail_get=async(req,res)=>{
+try{
+const movie = await Movie.findById(req.query.id)
+res.render('movie/detail',{movie})
+}catch(error){
+    console.log(error.message)
+    res.send(error.message)
+}
+   } 
+
 
 
 
@@ -101,7 +113,6 @@ catch(error){
     console.log(error.message)
 }
 }
-
 
 exports.movie_edit_post=async(req,res)=>{
 try{
@@ -116,7 +127,6 @@ catch(error){
 console.log(error.message)
 }
 }
-
 
 
 
