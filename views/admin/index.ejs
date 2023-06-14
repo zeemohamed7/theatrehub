@@ -1,4 +1,4 @@
-<h3>movie Index</h3>
+<h3>Movies Index</h3>
 
 <!-- 
 title: {
@@ -54,7 +54,9 @@ title: {
           </td>
 
           <td>
-            <%=movie.time%>
+            <% movie.showTimes.forEach(function(time){ %>
+                  <%= time %>
+              <% }) %>
               </td>
 
               

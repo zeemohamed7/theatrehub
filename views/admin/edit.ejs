@@ -1,4 +1,5 @@
 
+<h3>Edit <%=movie.title%> Details</h3>
 
  <form method="POST" action="/admin/edit">
  
@@ -26,10 +27,9 @@
  <input type="text" name="duration" value="<%=movie.duration%>"  >
  </div>
 
- <form method="POST" action="/movies/detail">
     <label>Showtimes:</label>
-    <select name="showTimes"> 
-      <% movie.showTimes.forEach(function(time){ %>
+    <select name="showTimes" multiple> 
+      <% timeOptions.forEach(function(time){ %>
     
         <option>
             <%= time %>
@@ -37,12 +37,14 @@
         </option>
         <% }) %>
     </select>
-    
+    <br>
     <label>Showdays:</label>
     <%= dayOptions %>  
     
  
- 
+ <br>
+ <input type="hidden" name="id" value="<%=movie._id%>">
+
  <input type="submit" value="UPDATE" >
  
  </form>

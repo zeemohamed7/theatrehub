@@ -59,13 +59,6 @@ exports.user_profile_get = async (req, res) => {
         try {
 
                 console.log(req.query.isEditing)
-
-            // if true console.log(req.query.isEditing)
-            // do nothing
-
-            // else const isEditing = false
-
-
             console.log(req.query.id)
 
             const user = await User.findById(req.query.id)

@@ -73,23 +73,20 @@ exports.movie_delete=async(req,res)=>{
     try{
 
     await Movie.findByIdAndDelete(req.query.id)
+    console.log('Movie has been deleted')
  return res.redirect('/admin/index')
     }
    catch(error){
     res.send(error.message)
-   } finally {
-    // Execute this code after no matter what
-    console.log('We are in the finally block')
-}
-
+   } 
 }
 
 
 
 exports.movie_edit_get=async(req,res)=>{
 try{
-const movie=await Movie.findById(req.query.id)
-res.render('admin/edit',{movies})
+const movie = await Movie.findById(req.query.id)
+res.render('admin/edit',{movie, timeOptions, dayOptions})
 }
 catch(error){
     console.log(error.message)
@@ -99,8 +96,11 @@ catch(error){
 
 exports.movie_edit_post=async(req,res)=>{
 try{
-console.log(req.body.id)
 await Movie.findByIdAndUpdate(req.body.id,req.body)
+console.log(req.body)
+console.log(req.body.id)
+console.log('Your movie details have been updated')
+
 res.redirect('/admin/index')
 }
 catch(error){
