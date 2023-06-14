@@ -36,21 +36,29 @@ catch(error){
 
 
 
-//adds the movie data into database
+//adding a movie to data base with image
 exports.movie_create_post=(req,res)=>{
-console.log(req.body)
-
-const movie = new Movie(req.body) 
-movie.save()
+    console.log('req.body', req.body)
+console.log('reg file nam',req.file)
+Movie.create({
+title:req.body.title,
+img: req.file.filename,
+description:req.body.description,
+genre:req.body.genre,
+duration:req.body.duration,
+date:req.body.date,
+time:req.body.time
+})
 .then(()=>{
-    console.log("your movie has been saved into database")
-    return res.redirect('/admin/index')
-
+    console.log(req.body)
+        console.log("your movie has been saved into database")
+        return res.redirect('/admin/index')
 })
 .catch((error)=>{
-    console.log("an error occured",error)
-})
+ console.log("an error occured",error)
+  })
 }
+
 
 
 

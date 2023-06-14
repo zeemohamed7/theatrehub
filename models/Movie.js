@@ -15,9 +15,12 @@ const movieSchema=mongoose.Schema({
   genre:{
     type:String,
     required:true},
-  duration:{type:Number},
-  showDays: {type: Array, },
-  showTimes:{type: Array}
+  duration:{type:Number,
+    required:true},
+  showDays: {type: Array,
+    required:true },
+  showTimes:{type: Array,
+    required:true}
 
 })
 

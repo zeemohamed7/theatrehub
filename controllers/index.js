@@ -28,5 +28,14 @@ exports.about_get = async(req,res) => {
         }
 }
 
+exports.search_post = async(req, res) => {
+    try {
+
+    }         catch (error) {
+        console.log(error.message)
+        res.send(error.message)
+    }
+}
+
 
 
