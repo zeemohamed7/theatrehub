@@ -13,10 +13,10 @@ Theater Hub is an application to book your movie easily, You can sign up and cre
 
 # Team members contributions
 
-Zainab: worked on the home page, post controllers to DB, isLoggedIn, isAdmin, passportConfig, admin controllers, showTimes and showDays, SignUp, movie details
-Sara: Admin page ...
-Latife: signin , signout, forgot password, user profile ...
-Sumaya: views file -Movie description, Admin adding movies,- seats, css ...
+1. Zainab: worked on the home page, connecting the DB, search bar, css ...
+2. Sara: Admin page ...
+3. Latife: signin , signout, forgot password, user profile ...
+4. Sumaya: views Folder, files -Movie discrption, Admin adding movies,- seats, css, ReadMe ...
 
 # Demo of application
 ![IMG-20230614-WA0027](https://media.git.generalassemb.ly/user/49241/files/db62938b-c1e4-41b5-a9aa-ff8d1218c969)
@@ -25,8 +25,9 @@ Sumaya: views file -Movie description, Admin adding movies,- seats, css ...
 
 
 # Difficulties
-1. Uploading images packages (solved)
-2. Creating the seats to choose while booking.
+1.
+2.
+3. Creating the seats.
 
 # favorite part
 1. adding movies as admin connected to DB
