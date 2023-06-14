@@ -33,10 +33,7 @@ const movieSchema=mongoose.Schema({
     type: String,
     required: true
 },
- img:{
-    data:Buffer,
-    contentType:String
- },
+ img:String,
   description:{ type:String },
   genre:{
     type:String,

@@ -9,17 +9,12 @@ const Storage=multer.diskStorage({
 
     filename: (req,file,cb)=>{
         cb(null,file.originalname)
-
-       // cb(null, req.query.filename + path.extname(file.originalname));
     }
     }) //end of disk storage  
 
        const upload =multer({
        storage:Storage,
        })
-
-
-
 
 
 //movie routers 

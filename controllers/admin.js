@@ -16,23 +16,6 @@ catch(error){
     console.log(error.message)
 }
 }
-//adds the movie data into database with out img 
-// exports.movie_create_post=(req,res)=>{
-// console.log(req.body)
-
-// const movie=new Movie(req.body) 
-// movie.save()
-// .then(()=>{
-//     console.log("your movie has been saved into database")
-//     return res.redirect('/admin/index')
-
-// })
-// .catch((error)=>{
-//     console.log("an error occured",error)
-// })
-// }
-//////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 
 //adding a movie to data base with image 
@@ -42,7 +25,7 @@ console.log('reg file nam',req.file)
 
 Movie.create({
 title:req.body.title,
-image:req.file.filename,
+img: req.file.filename,
 description:req.body.description,
 genre:req.body.genre,
 duration:req.body.duration,
