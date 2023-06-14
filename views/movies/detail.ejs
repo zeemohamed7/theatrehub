@@ -23,22 +23,21 @@
 <div>
 <h3>Booking Info</h3>
 <form method="POST" action="/movies/detail">
+
+
 <label>Select Show Time </label>
 <select name="showTimes"> 
-  <% movie.showTimes.forEach(function(time){ %>
 
-    <option>
-        <%= time %>
-
-    </option>
-    <% }) %>
+    <option> 10: 00 - 12: 00</option>
 </select>
+
+
 
 <label>Select Show Day </label>
 <select name="showDays" > 
     <% dayOptions.forEach(function(day) {%>
 
-    <option value="<%= day %>">
+    <option value="<%=day%>">
         <%= day %>
 
     </option>

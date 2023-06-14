@@ -1,5 +1,10 @@
 <% if (isEditing) {%>
     <form  method ='POST' action="/user/profile?id=<%= user._id %>">
+        <!-- <label>
+            <input type="file" id="input">
+            <img id="preview" src="https://pspi.com/wp-content/uploads/2019/12/David-Eastlund-PA-1-300x300.png" alt="your image" />
+        </label> -->
+
         <label> First Name </label><br>
         <input name="firstName" value="<%= user.firstName %>"/><br>
 
@@ -31,4 +36,4 @@
 
 <button>Delete</button>
 
-<a href="/user/forgotpassword">Change Password</a>
+<a href="/user/changepassword">Change Password</a>
