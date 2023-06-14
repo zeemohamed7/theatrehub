@@ -14,7 +14,7 @@ Theatre Hub is an application to book your movie easily, You can sign up and cre
 # Team members contributions
 
 1. Zainab: worked on the home page, connecting the DB, search bar, css ...
-2. Sara: Admin page ...
+2. Sara: Admin pages ,addming dynamic images ,model page  ...
 3. Latife: signin , signout, forgot password, user profile ...
 4. Sumaya: views Folder, files -Movie discrption, Admin adding movies,- seats, css, ReadMe ...
 
@@ -28,9 +28,9 @@ Theatre Hub is an application to book your movie easily, You can sign up and cre
 3. uploading images to the DB but then we fixed it.
 
 # Difficulties
-1.
-2.
-3. Creating the seats.
+1.fixing errors :(
+2.setting correct routes 
+3. Creating the seats .
 
 # favorite part
 1. adding movies as admin connected to DB
