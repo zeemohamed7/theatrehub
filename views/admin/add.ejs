@@ -52,44 +52,49 @@ title:
 
 <!-- image uplods -->
 
+
+<div class="container">
+
+
 <form method="POST" action="/admin/add" enctype="multipart/form-data">
     <div>
     <label> movie title </label>
-    <input type="text" name="title"  > 
+    <input type="text" name="title"  required> 
     </div>
     
    <div>
 <label> upload an image  </label>
-<input type="file" name="movie_image" accept="image/*">
+<input type="file" name="movie_image" accept="image/*" >
    </div>
 
        <div>
         <label> movie description</label>
-        <input type="text" name="description"  >
+        <input type="text" name="description"  required>
         </div>
     
     <div>
     <label >Genere</label> 
-    <input type="text" name="genre"  >
+    <input type="text" name="genre"  required>
     </div>
     
     <div>
         <label >duration </label>
-        <input type="number" name="duration"  >
+        <input type="number" name="duration"  min="1" max="200" required>
         </div>
     <div>
     <label>start date </label>
-    <input type="date" name="date"   >
+    <input type="date" name="date" required>
     </div>
 
     <div>
     <label>start time </label>
-    <input type="time" name="time"  >
+    <input type="time" name="time" required>
     </div>
     
     <div>
     <input type="submit" value="submit"></input>
     </div>
-    
+    <br>
     </form>
 
+    </div>

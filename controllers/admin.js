@@ -2,12 +2,7 @@
 
 
 const Movie = require('../models/Movie') //export movie model 
-
 const multer=require('multer')
-
-
-
-
 
 
 //display all movies in the data base
@@ -21,7 +16,7 @@ catch(error){
     console.log(error.message)
 }
 }
-//adds the movie data into database
+//adds the movie data into database with out img 
 // exports.movie_create_post=(req,res)=>{
 // console.log(req.body)
 
@@ -39,25 +34,12 @@ catch(error){
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-    const Storage=multer.diskStorage({
-
-    destination:'public/movie_images',
-    filename: (req,file,cb)=>{
-        //cb(null,Date.now())
-        cb(null,file.originalname)
-    }
-    })
-    
-    
-       const upload =multer({
-       storage:Storage,
-       })
-
-
-
 
 //adding a movie to data base with image 
-exports.movie_create_post=upload.single('movie_image'),(req,res)=>{
+exports.movie_create_post=(req,res)=>{
+    console.log('req.body', req.body)
+console.log('reg file nam',req.file)
+
 Movie.create({
 title:req.body.title,
 image:req.file.filename,
@@ -67,41 +49,15 @@ duration:req.body.duration,
 date:req.body.date,
 time:req.body.time
 })
-.then(()=>{
+.then(()=>{   
     console.log(req.body)
         console.log("your movie has been saved into database")
         return res.redirect('/admin/index')
-    
 })
 .catch((error)=>{
  console.log("an error occured",error)
   })
-
 }
-
-
-
-
-
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //get a list of all movies 

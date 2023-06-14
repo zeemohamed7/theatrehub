@@ -10,11 +10,11 @@ const multer=require('multer')
 const bodyParser=require('body-parser')
 
 
-//Importing Routes
 
+//Importing Routes
 const indexRoute = require('./routes/index') //HOME route
 const authRoute = require('./routes/auth')
-const bookingRoute = require('./routes/booking')
+//const bookingRoute = require('./routes/booking')
 const adminRoute = require('./routes/admin')
 const moviesRoute = require('./routes/movies')
 const userRoute = require('./routes/user')
@@ -67,7 +67,7 @@ app.use('/', authRoute)
 app.use('/', moviesRoute)
 app.use('/', userRoute)
 app.use('/', adminRoute)
-app.use('/', bookingRoute)
+//app.use('/', bookingRoute)
 
 
 app.listen(port, () => {

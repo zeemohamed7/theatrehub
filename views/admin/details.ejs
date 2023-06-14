@@ -8,7 +8,7 @@ m_duration:
 m_Date:
 m_Time -->
 
-<!-- this page to display all movie details  -->
+<!-- this page is not used for now   -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,10 +46,10 @@ m_Time -->
 
 
                 <td>
-                    <form method="POST" action="/movie/delete?id=<%=movie._id%>">
+                    <form method="POST" action="/admin/delete?id=<%=movie._id%>">
                         <button type="submit">DELETE</button>
                     </form>
-                    <a href="/movie/edit?id=<%=movie._id%>">UPDATE</a>
+                    <a href="/admin/edit?id=<%=movie._id%>">UPDATE</a>
     
                 </td>
             </tr>

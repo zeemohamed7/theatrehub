@@ -46,6 +46,13 @@ const movieSchema=mongoose.Schema({
   showtimes:{type: String}
 
 })
+
+
+
+
 const Movie = mongoose.model('movie',movieSchema)
 module.exports = Movie
+
+
+
 
