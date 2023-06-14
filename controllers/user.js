@@ -5,6 +5,7 @@ const passport = require('../lib/passportConfig') // import passport
 const User = require('../models/User')
 const { object } = require('webidl-conversions')
 
+
 exports.user_forgotpassword_get = async (req, res) => {
     res.render('user/forgotpassword')
     
@@ -57,6 +58,7 @@ exports.user_changepassword_post = async (req, res) => {
 exports.user_changepassword_get = async (req, res) => {
     res.render('user/changepassword')
 }
+
 exports.user_profile_get = async (req, res) => {
         try {
 
@@ -88,6 +90,22 @@ exports.user_profile_post = async(req, res) => {
         await User.findByIdAndUpdate(req.body.id, req.body)
 
         res.redirect('/')
+    }
+    catch(error){
+        console.log(error)
+    }
+}
+
+exports.booking_seats_get = async (req, res) => {
+    res.render('/seats')
+    
+}
+
+exports.booking_seats_post = async(req, res) => {
+    try{
+        await seats.find()
+
+        res.redirect('/seats')
     }
     catch(error){
         console.log(error)
