@@ -19,5 +19,14 @@ exports.index_get = async(req, res) => {
          }
 }
 
+exports.about_get = async(req,res) => {
+    try {
+        res.render('home/about') }
+        catch (error) {
+            console.log(error.message)
+            res.send(error.message)
+        }
+}
+
 
 

@@ -7,6 +7,7 @@ const mongoose=require('mongoose')
 //0 not booked
 //1 is booked
 const bookingSchema = mongoose.Schema({
+    emailAddress: { type: String },
     title: {type: String},
     showDays: {type: String},
     showTimes: {type: String},

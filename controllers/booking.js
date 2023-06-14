@@ -14,6 +14,7 @@ console.log(req.body)
     // const time = await req.body.
     // console.log(time)
     booking.save()
+    res.render('booking/bookingSaved')
     
 } catch(err){
     console.log(err.message)
