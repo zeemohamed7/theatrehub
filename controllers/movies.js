@@ -35,9 +35,9 @@ exports.movie_detail_get = async(req, res) => {
         
         }
         const movie = await Movie.findById(req.query.id)
-        const user = req.user.emailAddress
 
-        res.render('movies/detail', {movie, dayOptions, user})
+
+        res.render('movies/detail', {movie, dayOptions})
 
 
     } catch(error) {

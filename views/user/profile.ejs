@@ -1,38 +1,4 @@
-<% if (isEditing) {%>
-    <form  method ='POST' action="/user/profile?id=<%= user._id %>">
-        <label> First Name </label><br>
-        <input name="firstName" value="<%= user.firstName %>"/><br>
 
-        <label> Last Name </label><br>
-        <input name="lastName" value="<%= user.lastName %>"/><br>
-
-        <label> Email Address </label><br>
-        <input name="emailAddress" value="<%= user.emailAddress %>"/><br>
-
-        <input type="text" name="id" value="<%= user._id %>" hidden>
-
-        <button type="submit">Submit</button>
-    </form>
-
-    <% } else {%>
-        <label> First Name </label>
-        <h2 value="<%= user.firstName %>"><%= user.firstName %> </h2>
-
-        <label> last Name </label>
-        <h2 value="<%= user.lastName %>"> <%= user.lastName %></h2>
-
-        <label> email Address </label>
-        <h2 value="<%= user.emailAddress %>"> <%= user.emailAddress %></h2>
-
-
-        <a href="/user/profile?isEditing=true&id=<%= user._id %>">Edit</a>
-    <% } %>
-
-
-<button>Delete</button>
-
-<a href="/user/forgotpassword">Change Password</a>
-    
   
 
         <section class="vh-100" style="background-color: #C6B59B;">
@@ -46,22 +12,40 @@
          
 <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold"></span><span class="text-black-50"></span><span> </span></div>
 
-                            <div>
-                                <form  action="/user/profile">
-                        
-                            <label> First Name </label>
-                            <h2 value="<%= user.firstName %>"><%= user.firstName %> </h2>
-                            <label> last Name </label>
-                            <h2 value="<%= user.lastName %>"> <%= user.lastName %></h2>
-                        </form>
-                                </div>
-                            
-                            
-                            
-                            
-                                <button type="submit">Changing Password</button>
-                                <button>edit</button>
-                                <a href="/user/profile?isEditing=true&id=<%= user._id %>">Edit</a>
+<% if (isEditing) {%>
+  <form  method ='POST' action="/user/profile?id=<%= user._id %>">
+      <label> First Name </label><br>
+      <input name="firstName" value="<%= user.firstName %>"/><br>
+
+      <label> Last Name </label><br>
+      <input name="lastName" value="<%= user.lastName %>"/><br>
+
+      <label> Email Address </label><br>
+      <input name="emailAddress" value="<%= user.emailAddress %>"/><br>
+
+      <input type="text" name="id" value="<%= user._id %>" hidden>
+
+      <button type="submit">Submit</button>
+  </form>
+
+  <% } else {%>
+      <label> First Name </label>
+      <h2 value="<%= user.firstName %>"><%= user.firstName %> </h2>
+
+      <label> last Name </label>
+      <h2 value="<%= user.lastName %>"> <%= user.lastName %></h2>
+
+      <label> email Address </label>
+      <h2 value="<%= user.emailAddress %>"> <%= user.emailAddress %></h2>
+
+
+      <a href="/user/profile?isEditing=true&id=<%= user._id %>">Edit</a>
+  <% } %>
+
+
+
+<a href="/user/forgotpassword">Change Password</a>
+  
                         
                         </div>
                         <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">

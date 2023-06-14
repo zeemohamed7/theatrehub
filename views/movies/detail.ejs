@@ -31,7 +31,10 @@
   <% }) %>
 </select>
 <input type="hidden" name="title" value="<%= movie.title %>">
+<% if (currentUser) {%>
+
 <input type="hidden" name="emailAddress" value="<%= currentUser.emailAddress %>">
+<% } %>
 <button type="submit">Confirm Booking</button>
 </form>
 </div>
