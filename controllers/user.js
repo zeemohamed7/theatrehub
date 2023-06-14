@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt') // import bcrypt packages
 const passport = require('../lib/passportConfig') // import passport
 
 const User = require('../models/User')
+const { object } = require('webidl-conversions')
 
 exports.user_forgotpassword_get = async (req, res) => {
     res.render('user/forgotpassword')
@@ -11,11 +12,14 @@ exports.user_forgotpassword_get = async (req, res) => {
 
 exports.user_forgotpassword_post = async (req, res) => {
     try {
-        const user = await User.find({emailAddress: req.body.emailAddress})
+        const user = await  User.findOne({emailAddress: req.body.emailAddress})
         if (user) {
             res.render('user/changepassword', {user})
-        } else if (!user) {
-            res.send('User Not Found')
+        } else {
+            
+            console.log('User Not Found')
+            res.redirect('/auth/signup')
+            
         }
         console.log(user)
     }

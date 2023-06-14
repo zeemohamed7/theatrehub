@@ -16,20 +16,44 @@
 
 <p> <%= movie.description %></p>
 
-<p>Genre:<%= movie.genre %></p>
+<p>Genre: <%= movie.genre %></p>
 
-<p> <%= movie.duration %></p>
+<p> <%= movie.duration %> hours</p>
 
+<div>
 <h3>Booking Info</h3>
-<form ></form>
+<form method="POST" action="/movies/detail">
+<label>Select Show Time </label>
+<select name="showTimes"> 
+  <% movie.showTimes.forEach(function(time){ %>
 
-<p> The date is <%= movie.date %></p>
+    <option>
+        <%= time %>
 
-<p> The time is <%= movie.time%></p>
+    </option>
+    <% }) %>
+</select>
+
+<label>Select Show Day </label>
+<select name="showDays" > 
+    <% dayOptions.forEach(function(day) {%>
+
+    <option value="<%= day %>">
+        <%= day %>
+
+    </option>
+    <% }) %>
 
 
-<button type="submit">Book</button>
+</select>
 
+
+<input type="hidden" name="title" value="<%= movie.title %>">
+
+
+<button type="submit">Confirm Booking</button>
+</form>
+</div>
                 
                 </div>
                 <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">

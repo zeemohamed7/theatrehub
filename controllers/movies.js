@@ -21,14 +21,25 @@ exports.movie_index_get = async(req, res) => {
 
 exports.movie_detail_get = async(req, res) => {
     try{
-    
+        const todayDate = new Date()
+        const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+        
+        
+        const dayOptions = []
+        for (let i = 0; i < 3; i++){
+            const date = (parseInt(("0" + todayDate.getDate()).slice(-2) ) + i).toString()
+            const day = weekday[todayDate.getDay() + i]
+            dayOptions.push(date +' '+ day)
+          
+        
+        }
         const movie = await Movie.findById(req.query.id)
-        console.log(movie)
-        res.render('movies/detail', {movie})
+
+        res.render('movies/detail', {movie, dayOptions})
 
 
     } catch(error) {
-        console.log(error.message)
-        res.send(error.message)
+        console.log(error)
+        res.send(error)
     }
 }

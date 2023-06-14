@@ -24,6 +24,11 @@ emailAddress:{
 password:{
     type: String,
     required:true
+},
+userType: {
+    type:String,
+    enum:['admin','user'],
+    default: "user"
 }
 },//end of schema 
 
