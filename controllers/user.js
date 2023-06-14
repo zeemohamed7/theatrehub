@@ -32,17 +32,20 @@ exports.user_forgotpassword_post = async (req, res) => {
 
 exports.user_changepassword_post = async (req, res) => {
     try {
-        const newPassword = req.body.newPassword
-        const confirmPassword = req.body.confirmPassword
+        const user = await User.find({emailAddress: req.body.emailAddress})
 
-        if(newPassword === confirmPassword) {
-            const pass = req.body.newPassword.toString();
+        const password = req.body.password
+        const confirm_password = req.body.confirm_password
+
+        if(password === confirm_password) {
+            const pass = req.body.password.toString();
             const hash = bcrypt.hashSync(pass, 10)
 
             await User.findOneAndUpdate({emailAddress: req.body.emailAddress, password: hash})
             res.redirect('/auth/signin')
         } else {
-            res.redirect('/');
+            res.redirect('/user/changepassword', {user}); 
+            console.log('Your new passwords dont match')
         }
         
     }
@@ -59,10 +62,12 @@ exports.user_changepassword_get = async (req, res) => {
 
 exports.user_profile_get = async (req, res) => {
         try {
-            let isEditing = false
-            console.log(req.query.isEditing) 
+
+                console.log(req.query.isEditing)
+            console.log(req.query.id)
 
             const user = await User.findById(req.query.id)
+            console.log(user)
 
             if (req.query.isEditing === 'true') {
                 let isEditing = true 
@@ -73,6 +78,7 @@ exports.user_profile_get = async (req, res) => {
                 res.render('user/profile', {user, isEditing})
             }
             console.log(isEditing)
+            res.render('user/profile', {user})
         }
         catch (err) {
             console.log('errorrr')

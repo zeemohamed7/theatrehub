@@ -4,7 +4,7 @@ const Booking = require('../models/Booking')
 exports.booking_get = async (req, res) => {
     const movie = await Movie.find()
     console.log(movie)
-    res.render('booking/Booking', {movie})
+    res.render('user/booking', {movie})
 }
 
 exports.booking_confirm_post = async(req, res) => {
@@ -14,6 +14,7 @@ console.log(req.body)
     // const time = await req.body.
     // console.log(time)
     booking.save()
+    res.render('booking/bookingSaved')
     
 } catch(err){
     console.log(err.message)

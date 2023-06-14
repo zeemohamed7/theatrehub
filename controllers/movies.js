@@ -34,7 +34,7 @@ exports.movie_detail_get = async(req, res) => {
         
         }
         const movie = await Movie.findById(req.query.id)
-        console.log(movie)
+
         res.render('movies/detail', {movie, dayOptions})
 
 
