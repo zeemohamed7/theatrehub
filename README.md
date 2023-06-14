@@ -1,47 +1,42 @@
 # project-2
 this is cinema booking system 
 
-Theatre Hub is an application to book your movie easily, You can sign up and create an account and book your desire move by choosing date and time.
+Theatre Hub is an application to book your movie easily, You can sign up and create an account and book your desired move by choosing date and time.
 
 
-## How the application work
+## How the application worka
 1. create an account for your self.
 2. go to the home page and scroll through the movies. 
 3. Pick the movie you like and click book.
-4. The discription page will diplayed, you can choose the date ane time.
+4. The description page will displayed, you can choose the date ane time.
 5. Click confirm book.
 
 # Team members contributions
 
-Zainab: worked on the home page, connecting the DB, search bar, css ...
+Zainab: worked on the home page, post controllers to DB, isLoggedIn, isAdmin, passportConfig, admin controllers, showTimes and showDays ...
 Sara: Admin page ...
 Latife: signin , signout, forgot password, user profile ...
-Sumaya: views file -Movie discrption, Admin adding movies,- seats, css ...
+Sumaya: views file -Movie description, Admin adding movies,- seats, css ...
 
 # Demo of application
 ![IMG-20230614-WA0027](https://media.git.generalassemb.ly/user/49241/files/db62938b-c1e4-41b5-a9aa-ff8d1218c969)
 
 
-# issued we faced
-1. git pull and push.
-2. styling and designing.
-3. uploading images to the DB but then we fixed it.
+
 
 # Difficulties
-1.
-2.
-3. Creating the seats.
+1. Uploading images packages (solved)
+2. Creating the seats to choose while booking.
 
 # favorite part
 1. adding movies as admin connected to DB
-2. 
+2. Making the time and day dynamic when selecting
 
 # For enhancement
-1. A page to display all movies booking.
-2. Make the website have a secure connection.
-3. User can upload profile image.
-4. Displaying available seats and taken one.
-5. Diplay movies as user age.
+1. Display user's bookings under profile.
+2. Send email/receipt to user's profile.
+4. User can upload profile image.
+5. Displaying available seats.
 
 # Trello:
 ![to do](https://media.git.generalassemb.ly/user/49241/files/15666dfd-c170-4ef7-bc46-2466bb134379)
