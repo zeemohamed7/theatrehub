@@ -4,6 +4,7 @@ const passport = require('../lib/passportConfig') // import passport
 
 const User = require('../models/User')
 const { object } = require('webidl-conversions')
+const Booking = require('../models/Booking')
 
 exports.user_forgotpassword_get = async (req, res) => {
     res.render('user/forgotpassword')
@@ -65,14 +66,27 @@ exports.user_profile_get = async (req, res) => {
 
             const user = await User.findById(req.query.id)
             console.log(user)
+            
+
+
+            const email = {emailAddress: req.user.emailAddress}
+
+        const allBookings = await Booking.find(email)
+        console.log(allBookings)
+        
+
+
+
+
+
 
             if (req.query.isEditing === 'true') {
                 let isEditing = true 
-                res.render('user/profile', {user, isEditing})
+                res.render('user/profile', {user, isEditing, allBookings})
                 
             } else {
                 let isEditing = false
-                res.render('user/profile', {user, isEditing})
+                res.render('user/profile', {user, isEditing, allBookings})
             }
             console.log(isEditing)
             res.render('user/profile', {user})
@@ -93,3 +107,18 @@ exports.user_profile_post = async(req, res) => {
         console.log(error)
     }
 }
+
+// exports.user_bookings_get = async(req, res) => {
+//     try{
+//         const email = req.user.emailAddress
+//         console.log(email)
+//         console.log('hiii')
+
+//         const allBookings = Booking.find(email)
+//         console.log(allBookings)
+//         res.render('user/profile', {allBookings} )
+//     } catch (err) {
+//     console.log(err.message)
+//     res.render(err.message)
+// }
+// }

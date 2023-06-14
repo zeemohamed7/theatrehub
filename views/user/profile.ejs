@@ -10,7 +10,7 @@
                       <div class="row justify-content-center">
                         <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
          
-<div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold"></span><span class="text-black-50"></span><span> </span></div>
+<div class="d-flex flex-column align-items-center text-center"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold"></span><span class="text-black-50"></span><span> </span></div>
 
 <% if (isEditing) {%>
   <form  method ='POST' action="/user/profile?id=<%= user._id %>">
@@ -38,20 +38,57 @@
       <label> email Address </label>
       <h2 value="<%= user.emailAddress %>"> <%= user.emailAddress %></h2>
 
+      <h4>All Bookings</h4>
 
+    
+  
+<!-- ===== -->
+
+
+
+  <table>
+    <tr>
+        <th>Title</th>
+        <th>Day</th>
+        <th>Title</th>
+    </tr>
+
+
+    <% allBookings.forEach(function(booking){ %>
+
+    <tr>
+
+  <td>
+<%=booking.title%>
+  </td>
+  <td>
+<%=booking.showDays%>
+  </td>
+  <td>
+<%=booking.showTimes%>
+  </td>
+
+</tr>
+</table>
+
+
+        <!-- Title: 
+        Day: 
+        Time:  -->
+
+
+      <% }) %>
+<br>
       <a href="/user/profile?isEditing=true&id=<%= user._id %>">Edit</a>
   <% } %>
 
 
-
+<br>
 <a href="/user/forgotpassword">Change Password</a>
   
                         
                         </div>
-                        <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-        
-          
-                        </div>
+                      
                       </div>
                     </div>
                   </div>

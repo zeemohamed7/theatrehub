@@ -15,6 +15,6 @@ router.post('/user/changepassword', userController.user_changepassword_post)
 router.get('/user/profile', isLoggedIn, userController.user_profile_get)
 router.post('/user/profile', userController.user_profile_post)
 router.get('/user/changepassword', userController.user_changepassword_get)
-
+// router.get('/user/profile', userController.user_bookings_get)
 
 module.exports = router
