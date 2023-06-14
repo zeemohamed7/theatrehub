@@ -1,10 +1,19 @@
-<form  method ='POST' action="/user/profile">
-    <% if (isEditing) {%>
+<% if (isEditing) {%>
+    <form  method ='POST' action="/user/profile?id=<%= user._id %>">
         <label> First Name </label><br>
-        <input value="<%= user.firstName %>"/><br>
+        <input name="firstName" value="<%= user.firstName %>"/><br>
 
-        <label> last Name </label><br>
-        <input value="<%= user.lastName %>"/><br>
+        <label> Last Name </label><br>
+        <input name="lastName" value="<%= user.lastName %>"/><br>
+
+        <label> Email Address </label><br>
+        <input name="emailAddress" value="<%= user.emailAddress %>"/><br>
+
+        <input type="text" name="id" value="<%= user._id %>" hidden>
+
+        <button type="submit">Submit</button>
+    </form>
+
     <% } else {%>
         <label> First Name </label>
         <h2 value="<%= user.firstName %>"><%= user.firstName %> </h2>
@@ -12,8 +21,17 @@
         <label> last Name </label>
         <h2 value="<%= user.lastName %>"> <%= user.lastName %></h2>
 
+        <label> email Address </label>
+        <h2 value="<%= user.emailAddress %>"> <%= user.emailAddress %></h2>
+
+
         <a href="/user/profile?isEditing=true&id=<%= user._id %>">Edit</a>
     <% } %>
+
+
+<button>Delete</button>
+
+<a href="/user/forgotpassword">Change Password</a>
     
   
 
@@ -58,4 +76,3 @@
             </div>
           </section>
         
->>>>>>>>> Temporary merge branch 2
