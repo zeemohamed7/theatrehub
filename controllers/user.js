@@ -55,7 +55,6 @@ exports.user_changepassword_post = async (req, res) => {
 
     }
 }
-
 exports.user_changepassword_get = async (req, res) => {
     res.render('user/changepassword')
 }
