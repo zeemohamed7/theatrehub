@@ -34,6 +34,7 @@ const movieSchema=mongoose.Schema({
   duration:{type:Number},
   showdays: {type:Date},
   showtimes:{type: String}
+
 })
 const Movie = mongoose.model('movie',movieSchema)
 module.exports = Movie

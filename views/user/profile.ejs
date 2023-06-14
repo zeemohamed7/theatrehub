@@ -4,36 +4,21 @@
             <input type="file" id="input">
             <img id="preview" src="https://pspi.com/wp-content/uploads/2019/12/David-Eastlund-PA-1-300x300.png" alt="your image" />
         </label> -->
-
         <label> First Name </label><br>
         <input name="firstName" value="<%= user.firstName %>"/><br>
-
         <label> Last Name </label><br>
         <input name="lastName" value="<%= user.lastName %>"/><br>
-
         <label> Email Address </label><br>
         <input name="emailAddress" value="<%= user.emailAddress %>"/><br>
-
         <input type="text" name="id" value="<%= user._id %>" hidden>
-
         <button type="submit">Submit</button>
     </form>
-
     <% } else {%>
         <label> First Name </label>
         <h2 value="<%= user.firstName %>"><%= user.firstName %> </h2>
-
         <label> last Name </label>
         <h2 value="<%= user.lastName %>"> <%= user.lastName %></h2>
-
         <label> email Address </label>
         <h2 value="<%= user.emailAddress %>"> <%= user.emailAddress %></h2>
-
-
         <a href="/user/profile?isEditing=true&id=<%= user._id %>">Edit</a>
     <% } %>
-
-
-<button>Delete</button>
-
-<a href="/user/changepassword">Change Password</a>

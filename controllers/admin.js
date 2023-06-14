@@ -38,6 +38,7 @@ catch(error){
     console.log(error.message)
 }
 }
+
 //adding a movie to data base with image
 exports.movie_create_post=(req,res)=>{
     console.log('req.body', req.body)
@@ -60,7 +61,7 @@ time:req.body.time
  console.log("an error occured",error)
   })
 }
-//get a list of all movies
+
 exports.movie_index_get=async(req,res)=>{
 try{
 const movies=await Movie.find()
