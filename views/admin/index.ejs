@@ -23,6 +23,7 @@ title: {
     <tr>
         <th>Title</th>
         <!-- <th>picture</th> -->
+        <th>Image<th>
         <th>Description</th>
         <th>Genre</th>
         <th>Duration</th>
@@ -35,7 +36,7 @@ title: {
 <%=movie.title%>
   </td>
   <td>
-    <img src="../movie_images/<%=movie.img%>" width="100px" height="100px" >
+    <img src="../movie_images/<%=movie.img%>" width="200px" height="200px" >
    </td>
   <td>
     <%=movie.description%>
@@ -47,9 +48,14 @@ title: {
         <%=movie.duration%>
           </td>
 
-    <td>
-        <%=movie.date%>
-          </td>
+          <td>
+            <%= dayOptions %>  
+                </td>
+                <td>
+                  <% movie.showTimes.forEach(function(time){ %>
+                        <%= time %>
+                    <% }) %>
+                    </td>
       
         <td>
             <form method="POST" action="/admin/delete?id=<%=movie._id%>">

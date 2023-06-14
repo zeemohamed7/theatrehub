@@ -26,7 +26,7 @@ const movieSchema=mongoose.Schema({
     type: String,
     required: true
 },
- img:String,
+img :String,
   description:{ type:String },
   genre:{
     type:String,

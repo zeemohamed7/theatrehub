@@ -29,6 +29,9 @@ userType: {
     type:String,
     enum:['admin','user'],
     default: "user"
+},
+bookings: {
+    type: Array,
 }
 },//end of schema 
 
