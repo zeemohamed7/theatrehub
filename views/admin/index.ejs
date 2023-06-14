@@ -1,4 +1,4 @@
-<h3>movie Index</h3>
+<h3>Movies Index</h3>
 
 <!-- 
 title: {
@@ -19,13 +19,13 @@ title: {
 <!-- this page to display a table of all movies for the admin to edit or delete -->
 <table>
     <tr>
-        <th>title</th>
+        <th>Title</th>
         <!-- <th>picture</th> -->
-        <th>discription</th>
+        <th>Description</th>
         <th>Genre</th>
-        <th>duration</th>
-        <th>date</th>
-        <th>time</th>
+        <th>Duration</th>
+        <th>Showdays</th>
+        <th>Showtimes</th>
     </tr>
 
 
@@ -49,11 +49,14 @@ title: {
           </td>
 
     <td>
-        <%=movie.date%>
+      <%= dayOptions %>  
+
           </td>
 
           <td>
-            <%=movie.time%>
+            <% movie.showTimes.forEach(function(time){ %>
+                  <%= time %>
+              <% }) %>
               </td>
 
               

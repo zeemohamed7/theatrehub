@@ -1,0 +1,41 @@
+body {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    color: white;
+    height: 100vh;
+}
+
+.square {
+background-color: aliceblue;
+width: 200px;
+height: 200px;
+
+}
+
+.seat {
+    height: 15px;
+    width: 18px;
+    margin: 5px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: grey;
+
+}
+
+.got seleted {
+background-color: beige;
+
+}
+
+.taken {
+    background-color: rgb(70, 150, 24);
+    
+    }
+
+    .Row {
+        display: flex;
+    }
