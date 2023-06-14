@@ -67,11 +67,10 @@
 <form method="POST" action="/movies/detail">
 <label>Select Show Time </label>
 <select name="showTimes">
-<% movie.showTimes.forEach(function(time){ %>
   <option>
-      <%= time %>
+    <option> 10: 00 - 12: 00</option>
+
   </option>
-  <% }) %>
 </select>
 <label>Select Show Day </label>
 <select name="showDays" >

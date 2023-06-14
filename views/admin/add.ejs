@@ -7,50 +7,70 @@ title:
   duration:
   date:
   time:-->
-
-
-<!-- <form method="POST" action="/movie/add" enctype="multipart/form-data"  > -->
-    <form method="POST" action="/admin/add" >
+<!--
+    <form method="POST" action="/movie/add" >
 <div>
-
-<label>Title </label>
-<input type="text" name="title"  > 
+<label> movie title </label>
+<input type="text" name="title"  >
 </div>
-
-<!-- <div>
-<label > movie picture </label>
-<input type="file" name="img" type="file" accept=".png, .jpg, .jpeg" > 
-</div> -->
-
    <div>
-    <label>Description</label>
+    <label> movie description</label>
     <input type="text" name="description"  >
     </div>
-
 <div>
-<label>Genre</label>
+<label >Genere</label>
 <input type="text" name="genre"  >
 </div>
-
 <div>
-    <label >Duration </label>
+    <label >duration </label>
     <input type="number" name="duration"  >
     </div>
-
 <div>
-<label>Select Show Times </label>
-<select name="showTimes" multiple="multiple"> 
-
-<% timeOptions.forEach(function(time) {%>
-    <option value="<%= time%>">
-        <%= time %>
-    </option>
-    <% }) %>
-</select>
+<label>start date </label>
+<input type="date" name="date"   >
 </div>
-<p>Show days shown:</p> <%= dayOptions %>
 <div>
-<input type="submit" value="Add"></input>
+<label>start time </label>
+<input type="time" name="time"  >
 </div>
-
-</form>
+<div>
+<input type="submit" value="submit"></input>
+</div>
+</form> -->
+<!-- image uplods -->
+<div class="container">
+    <form method="POST" action="/admin/add" enctype="multipart/form-data">
+        <div>
+        <label> movie title </label>
+        <input type="text" name="title"  required>
+        </div>
+       <div>
+    <label> upload an image  </label>
+    <input type="file" name="movie_image" accept="image/*" >
+       </div>
+           <div>
+            <label> movie description</label>
+            <input type="text" name="description"  required>
+            </div>
+        <div>
+        <label >Genere</label>
+        <input type="text" name="genre"  required>
+        </div>
+        <div>
+            <label >duration </label>
+            <input type="number" name="duration"  min="1" max="200" required>
+            </div>
+        <div>
+        <label>start date </label>
+        <input type="date" name="date" required>
+        </div>
+        <div>
+        <label>start time </label>
+        <input type="time" name="time" required>
+        </div>
+        <div>
+        <input type="submit" value="submit"></input>
+        </div>
+        <br>
+        </form>
+        </div>

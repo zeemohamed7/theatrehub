@@ -1,7 +1,7 @@
 const express=require('express');
 const multer=require('multer')
 const router=express.Router();
-const adminController=require('../controllers/admin')
+const adminController = require('../controllers/admin')
 
 const path = 'public/movie_images';
 const Storage=multer.diskStorage({
@@ -12,7 +12,10 @@ const Storage=multer.diskStorage({
     }) //end of disk storage
        const upload =multer({
        storage:Storage,
+
        })
+
+       
 //movie routers
 router.get('/admin/add',adminController.movie_create_get)
 router.post('/admin/add', upload.single('movie_image'), adminController.movie_create_post)
