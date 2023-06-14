@@ -4,7 +4,6 @@ const authCtrl = require('../controllers/auth')
 const isLoggedIn = require('../lib/isLoggedIn')
 
 
-const isLoggedIn = require('../lib/isLoggedIn')
 
 
 router.get('/auth/signup', authCtrl.auth_signup_get)
