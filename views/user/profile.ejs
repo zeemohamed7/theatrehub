@@ -1,24 +1,99 @@
+
+  
+
+        <section class="vh-100" style="background-color: #C6B59B;">
+            <div class="container h-100">
+              <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-lg-12 col-xl-11">
+                  <div class="card text-black" style="border-radius: 25px;">
+                    <div class="card-body p-md-5">
+                      <div class="row justify-content-center">
+                        <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+         
+<div class="d-flex flex-column align-items-center text-center"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold"></span><span class="text-black-50"></span><span> </span></div>
+
 <% if (isEditing) {%>
-    <form  method ='POST' action="/user/profile?id=<%= user._id %>">
-        <!-- <label>
-            <input type="file" id="input">
-            <img id="preview" src="https://pspi.com/wp-content/uploads/2019/12/David-Eastlund-PA-1-300x300.png" alt="your image" />
-        </label> -->
-        <label> First Name </label><br>
-        <input name="firstName" value="<%= user.firstName %>"/><br>
-        <label> Last Name </label><br>
-        <input name="lastName" value="<%= user.lastName %>"/><br>
-        <label> Email Address </label><br>
-        <input name="emailAddress" value="<%= user.emailAddress %>"/><br>
-        <input type="text" name="id" value="<%= user._id %>" hidden>
-        <button type="submit">Submit</button>
-    </form>
-    <% } else {%>
-        <label> First Name </label>
-        <h2 value="<%= user.firstName %>"><%= user.firstName %> </h2>
-        <label> last Name </label>
-        <h2 value="<%= user.lastName %>"> <%= user.lastName %></h2>
-        <label> email Address </label>
-        <h2 value="<%= user.emailAddress %>"> <%= user.emailAddress %></h2>
-        <a href="/user/profile?isEditing=true&id=<%= user._id %>">Edit</a>
-    <% } %>
+  <form  method ='POST' action="/user/profile?id=<%= user._id %>">
+      <label> First Name </label><br>
+      <input name="firstName" value="<%= user.firstName %>"/><br>
+
+      <label> Last Name </label><br>
+      <input name="lastName" value="<%= user.lastName %>"/><br>
+
+      <label> Email Address </label><br>
+      <input name="emailAddress" value="<%= user.emailAddress %>"/><br>
+
+      <input type="text" name="id" value="<%= user._id %>" hidden>
+
+      <button type="submit">Submit</button>
+  </form>
+
+  <% } else {%>
+      <label> First Name </label>
+      <h2 value="<%= user.firstName %>"><%= user.firstName %> </h2>
+
+      <label> last Name </label>
+      <h2 value="<%= user.lastName %>"> <%= user.lastName %></h2>
+
+      <label> email Address </label>
+      <h2 value="<%= user.emailAddress %>"> <%= user.emailAddress %></h2>
+
+      <h4>All Bookings</h4>
+
+    
+  
+<!-- ===== -->
+
+
+
+  <table>
+    <tr>
+        <th>Title</th>
+        <th>Day</th>
+        <th>Title</th>
+    </tr>
+
+
+    <% allBookings.forEach(function(booking){ %>
+
+    <tr>
+
+  <td>
+<%=booking.title%>
+  </td>
+  <td>
+<%=booking.showDays%>
+  </td>
+  <td>
+<%=booking.showTimes%>
+  </td>
+
+</tr>
+</table>
+
+
+        <!-- Title: 
+        Day: 
+        Time:  -->
+
+
+      <% }) %>
+<br>
+      <a href="/user/profile?isEditing=true&id=<%= user._id %>">Edit</a>
+  <% } %>
+
+
+<br>
+<a href="/user/forgotpassword">Change Password</a>
+  
+                        
+                        </div>
+                      
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        

@@ -502,3 +502,7 @@ span{
   background: #000;
   border: 1px solid #4070f4;
 }
+
+.card_image img{
+  height: 200px;
+}
