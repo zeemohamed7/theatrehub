@@ -1,7 +1,9 @@
 # project-2
 this is cinema booking system 
 
-Theater Hub is an application to book your movie easily, You can sign up and create an account and book your desired move by choosing date and time.
+
+Theatre Hub is an application to book your movie easily, You can sign up and create an account and book your desired move by choosing date and time.
+
 
 
 ## How the application worka
@@ -13,11 +15,11 @@ Theater Hub is an application to book your movie easily, You can sign up and cre
 
 # Team members contributions
 
-Zainab: worked on the home page, post controllers to DB, isLoggedIn, isAdmin, passportConfig, admin controllers, showTimes and showDays, SignUp, movie details
-Sara: Admin pages ,add movie ,delete a movie , update a movie  , ,addming dynamic images ,model page  ...
-Latife: signin , signout, forgot password, user profile ...
-Sumaya: views file -Movie description, Admin adding movies,- seats, css ...
 
+Zainab: worked on the home page, post controllers to DB, isLoggedIn, isAdmin, passportConfig, admin controllers, showTimes and showDays ...
+Sara: Admin pages(add movie ,update a movie,delete a movie ,Admin.ejs, controller.ejs, Models files ...
+Latife: signin , signout, forgot password, user profile ...
+Sumaya: Server, views file -Movie description, Admin adding and Editing movie pages, Movies Router- seats, css ...
 
 
 # Demo of application
@@ -27,7 +29,6 @@ Sumaya: views file -Movie description, Admin adding movies,- seats, css ...
 
 
 # Difficulties
-
 1. Uploading images packages (solved)
 2. Creating the seats to choose while booking.
 3.fixing errors :(
@@ -35,7 +36,9 @@ Sumaya: views file -Movie description, Admin adding movies,- seats, css ...
 
 # favorite part
 1. adding movies as admin connected to DB
-2. Adding options when choosing time and day
+2. Making the time and day dynamic when selecting
+3. Adding options when choosing time and day
+
 
 # For enhancement
 1. Display user's bookings under profile.
@@ -43,6 +46,7 @@ Sumaya: views file -Movie description, Admin adding movies,- seats, css ...
 4. User can upload profile image.
 5. Displaying available seats.
 6. Create functional search bar
+
 
 # Trello:
 ![to do](https://media.git.generalassemb.ly/user/49241/files/15666dfd-c170-4ef7-bc46-2466bb134379)
