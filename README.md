@@ -1,7 +1,5 @@
 # project-2
 this is cinema booking system 
-
-
 Theatre Hub is an application to book your movie easily, You can sign up and create an account and book your desired move by choosing date and time.
 
 
@@ -31,8 +29,8 @@ Sumaya: Server, views file -Movie description, Admin adding and Editing movie pa
 # Difficulties
 1. Uploading images packages (solved)
 2. Creating the seats to choose while booking.
-3.fixing errors :(
-
+3.retriveing the data from the database 
+4.fixing errors :(
 
 # favorite part
 1. adding movies as admin connected to DB
