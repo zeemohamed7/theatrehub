@@ -25,6 +25,8 @@ router.post('/admin/add', upload.single('movie_image'), adminController.movie_cr
 router.post('/admin/add', isLoggedIn,isAdmin,adminController.movie_create_post)
 router.get('/admin/index',isLoggedIn, isAdmin,adminController.movie_index_get)
 router.post('/admin/delete', isLoggedIn, isAdmin,adminController.movie_delete)
+router.get('/admin/edit', isLoggedIn, isAdmin,adminController.movie_edit_get)
+router.post('/admin/edit', isLoggedIn, isAdmin,adminController.movie_edit_post)
 
 
 
