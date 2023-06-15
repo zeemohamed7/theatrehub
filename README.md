@@ -4,7 +4,7 @@ this is cinema booking system
 Theatre Hub is an application to book your movie easily, You can sign up and create an account and book your desired move by choosing date and time.
 
 
-## How the application worka
+## How the application work
 1. create an account for your self.
 2. go to the home page and scroll through the movies. 
 3. Pick the movie you like and click book.
@@ -14,9 +14,9 @@ Theatre Hub is an application to book your movie easily, You can sign up and cre
 # Team members contributions
 
 Zainab: worked on the home page, post controllers to DB, isLoggedIn, isAdmin, passportConfig, admin controllers, showTimes and showDays ...
-Sara: Admin page, Models ...
+Sara: Admin pages(Admin.ejs, controller.ejs, Models files ...
 Latife: signin , signout, forgot password, user profile ...
-Sumaya: Server, views file -Movie description, Admin adding, Editing movies, Movies Router- seats, css ...
+Sumaya: Server, views file -Movie description, Admin adding and Editing movie pages, Movies Router- seats, css ...
 
 # Demo of application
 ![IMG-20230614-WA0027](https://media.git.generalassemb.ly/user/49241/files/db62938b-c1e4-41b5-a9aa-ff8d1218c969)
