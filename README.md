@@ -4,7 +4,7 @@ this is cinema booking system
 Theater Hub is an application to book your movie easily, You can sign up and create an account and book your desired move by choosing date and time.
 
 
-## How the application worka
+## How the application works
 1. create an account for your self.
 2. go to the home page and scroll through the movies. 
 3. Pick the movie you like and click book.
