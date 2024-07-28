@@ -1,13 +1,7 @@
 //this page to do all basic crud operation for a movie
 const Movie = require('../models/Movie') //export movie model
 const multer=require('multer')
-//display all movies in the data base
-// exports.movie_create_get= async (req,res)=>{
-// try{
-//     console.log('movie added')
-//     res.render('admin/add')
-//this page to do all basic crud operation for a movie 
-// }
+require('dotenv').config();
 
 
 const Booking = require('../models/Booking')
@@ -24,6 +18,9 @@ for (let i = 0; i < 3; i++){
   
 
 }
+
+
+  
 
 //display all movies in the data base
 exports.movie_create_get= async (req,res)=>{
@@ -42,6 +39,7 @@ catch(error){
 
 //adding a movie to data base with image
 exports.movie_create_post=(req,res)=>{
+    app.get()
     console.log('req.body', req.body)
 console.log('reg file nam',req.file)
 Movie.create({

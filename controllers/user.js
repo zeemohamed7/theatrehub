@@ -77,11 +77,6 @@ exports.user_profile_get = async (req, res) => {
         console.log(allBookings)
         
 
-
-
-
-
-
             if (req.query.isEditing === 'true') {
                 let isEditing = true 
                 res.render('user/profile', {user, isEditing, allBookings})

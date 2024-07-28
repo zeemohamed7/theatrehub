@@ -1,10 +1,14 @@
 
 const express = require('express')
+const axios = require('axios');
 const mongoose = require('mongoose')
+require("dotenv").config()
 const expressLyouts = require('express-ejs-layouts')
 const session = require('express-session')
 const passport = require('./lib/passportConfig')
 const isAdmin = require('./lib/isAdmin')
+const Movie = require('./models/Movie')
+
 
 //Importing Routes
 
@@ -34,7 +38,7 @@ app.use(express.urlencoded({
 }))
 
 app.use(session({
-    secret:'This is a secret !',
+    secret: process.env.SECRET_SESSION,
     saveUninitialized: true,
     resave: false,
     cookie: {maxAge: 86400000}
@@ -44,8 +48,6 @@ app.use(passport.session())
 
 app.use(function(req, res, next){
     res.locals.currentUser = req.user
-
-
     next()
 })
 
@@ -62,21 +64,46 @@ app.use('/', adminRoute)
 app.use('/', bookingRoute)
 
 
-app.listen(port, () => {
-    console.log(`Cinema is on port${port}`)
-})
+// Fetch movie data from the TMDb API
+const fetchMovieData = async() => {
+    try {
+      const response = await axios.get(`${process.env.API_BASE_URL}/movie/popular?api_key=${process.env.API_KEY}&language=en-US&page=1`);
+      const movies = response.data.results;
+  
+      // Save the movie data to the database
+      for (const movie of movies) {
+        const newMovie = new Movie({
+          title: movie.title,
+          director: movie.director,
+          cast: movie.cast,
+          plot: movie.overview,
+          poster: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+          releaseDate: movie.release_date
+        });
+        await newMovie.save();
+      }
+  
+      console.log('Movie data saved to the database');
+    } catch (error) {
+      console.error('Error fetching movie data:', error);
+    }
+  }
+
+
+
 
 mongoose.set('strictQuery', false)
 
-mongoose.connect('mongodb+srv://deadmelissajames:AZ3K6OEWsqD3hJ1g@sei4cluster.uwzeppu.mongodb.net/Cinema',
-{
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-},
-).then(() => {
-    console.log('Mongoose Is Connected to MongoDB')
+mongoose.connect(process.env.MONGODB_URI)
+.then(() => {
+    console.log('Mongoose Is Connected to MongoDB');
+    fetchMovieData();
 }).catch((err) => {
     console.log('An error occured', err)
+})
+
+app.listen(port, () => {
+    console.log(`Cinema is on port${port}`)
 })
 
 
