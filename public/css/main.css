@@ -134,6 +134,8 @@ nav ul li a:hover {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  justify-content: space-between;
+  height: 600px;
 }
 /* #231942
 #ACC8E5 */
@@ -506,3 +508,4 @@ span{
 .card_image{
   height: 200px;
 }
+

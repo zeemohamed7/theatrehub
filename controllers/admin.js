@@ -15,8 +15,6 @@ for (let i = 0; i < 3; i++){
     const date = (parseInt(("0" + todayDate.getDate()).slice(-2) ) + i).toString()
     const day = weekday[todayDate.getDay() + i]
     dayOptions.push(date +' '+ day)
-  
-
 }
 
 

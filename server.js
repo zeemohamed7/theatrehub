@@ -65,29 +65,38 @@ app.use('/', bookingRoute)
 
 
 // Fetch movie data from the TMDb API
-const fetchMovieData = async() => {
-    try {
-      const response = await axios.get(`${process.env.API_BASE_URL}/movie/popular?api_key=${process.env.API_KEY}&language=en-US&page=1`);
-      const movies = response.data.results;
+// const fetchMovieData = async() => {
+//     try {
+//       const response = await axios.get(`${process.env.API_BASE_URL}/movie/popular?api_key=${process.env.API_KEY}&language=en-US&page=1`);
+//       const movies = response.data.results;
   
-      // Save the movie data to the database
-      for (const movie of movies) {
-        const newMovie = new Movie({
-          title: movie.title,
-          director: movie.director,
-          cast: movie.cast,
-          plot: movie.overview,
-          poster: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
-          releaseDate: movie.release_date
-        });
-        await newMovie.save();
-      }
+//       // Save the movie data to the database
+//       for (const movie of movies) {
+//         const newMovie = new Movie({
+//           adult: movie.adult,
+//           backdrop_path: movie.backdrop_path,
+//           genre_ids: movie.genre_ids,
+//           id: movie.id,
+//           original_language: movie.original_language,
+//           original_title: movie.original_title,
+//           overview: movie.overview,
+//           popularity: movie.popularity,
+//           poster_path: movie.poster_path,
+//           release_date: movie.release_date,
+//           title: movie.title,
+//           video: movie.video,
+//           vote_average: movie.vote_average,
+//           vote_count: movie.vote_count
+//         });
+      
+//         await newMovie.save();
+//       }
   
-      console.log('Movie data saved to the database');
-    } catch (error) {
-      console.error('Error fetching movie data:', error);
-    }
-  }
+//       console.log('Movie data saved to the database');
+//     } catch (error) {
+//       console.error('Error fetching movie data:', error);
+//     }
+//   }
 
 
 
@@ -97,7 +106,7 @@ mongoose.set('strictQuery', false)
 mongoose.connect(process.env.MONGODB_URI)
 .then(() => {
     console.log('Mongoose Is Connected to MongoDB');
-    fetchMovieData();
+    // fetchMovieData();
 }).catch((err) => {
     console.log('An error occured', err)
 })
